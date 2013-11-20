@@ -25,6 +25,7 @@ Capítulos
 * [Inicialización del servidor](src/zero-server-wizard/zero-server-wizard.md)
 * [N4D](src/n4d/n4d.md)
 * [lliurex-up](src/lliurex-up/lliurex-up.md)
+* [Jugallenguap](src/playonlinux/jugallengua.md)
 Agradecimientos
 ---------------
 

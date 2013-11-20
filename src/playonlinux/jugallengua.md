@@ -30,7 +30,7 @@ Para hacerlo funcionar los pasos son los siguientes:
 * ¡Ya podemos crear un acceso directo al escritorio a nuestro JugaLlengua y a aprender!
 
 <!--Hasta aquí el texto-->
-[playonlinux-jugallengua-miscelaneous]: https://raw.github.com/aberlanas/lliurex-facil/master/imgs/playonlinux/playonlinux-jugallengua-miscelaneous.png "PlayOnLinuX VM"
+[playonlinux-jugallengua-miscelaneous]: https://raw.github.com/aberlanas/lliurex-facil/master/imgs/playonlinux/imgs/playonlinux/playonlinux-jugallengua-miscellaneous.png "PlayOnLinuX VM"
 [playonlinux-jugallengua-create-vm]: https://raw.github.com/aberlanas/lliurex-facil/master/imgs/playonlinux/playonlinux-jugallengua-configuration-button.png "PlayOnLinuX VM"
 [playonlinux-jugallengua-create-vm-details]: https://raw.github.com/aberlanas/lliurex-facil/master/imgs/playonlinux/playonlinux-jugallengua-vm.png "PlayOnLinuX VM"
 [playonlinux-jugallengua-create-vm-components]: https://raw.github.com/aberlanas/lliurex-facil/master/imgs/playonlinux/playonlinux-jugallengua-components.png "PlayOnLinuX VM"

@@ -17,14 +17,20 @@ Para hacerlo funcionar los pasos son los siguientes:
 
 * En *install componentes*:
 	* Instalamos dsound
-	* Instalamos quartz
-	* Instalamos Flash Player
 	![Instalar componentes en la máquina de Wine][playonlinux-jugallengua-create-vm-components]
-	![Instalar componentes en la máquina de Wine][playonlinux-jugallengua-create-vm-components-1]
+
+	* Instalamos quartz
 	![Instalar componentes en la máquina de Wine][playonlinux-jugallengua-create-vm-components-2]
+
+	* Instalamos Flash Player
+	![Instalar componentes en la máquina de Wine][playonlinux-jugallengua-create-vm-components-1]
+	
+
 * Y cuando esté todo listo en el apartado "Miscellaneous", ejecutamos el exe de la instalación de JugaLlengua que previamente hemos bajado. (*instal.exe*). 
 ![Instalar componentes en la máquina de Wine][playonlinux-jugallengua-miscelaneous]
+
 * Ya queda menos, en la pantalla "General" pulsamos el botón "Make a shortcut from this virtual drive" y seleccionamos el JugaLlengua (ojo no seleccionar el desinstalador ^_^ )
+
 ![Instalar JugaLlengua][playonlinux-jugallengua-create-vm-details]
 * ¡Y listo!
 * ¡Ya podemos crear un acceso directo al escritorio a nuestro JugaLlengua y a aprender!

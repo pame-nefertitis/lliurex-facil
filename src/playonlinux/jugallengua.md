@@ -6,7 +6,8 @@ JugaLlengua es una aplicación Flash preparada únicamente para Windows que no f
 Para hacerlo funcionar los pasos son los siguientes:
 
 * Instalamos el playonlinux versión 4.2.1-1~lliurex1306 (se está poniendo en los repositorios mientras escribo estas líneas), desde el Synaptic o desde el Centro de software.
-* Descargamos el programa desde la web de política lingüística. http://www.cece.gva.es/polin/es/publicacions_jugallengua.html
+* Descargamos el programa desde la web de política lingüística. 
+  http://www.cece.gva.es/polin/es/publicacions_jugallengua.html
 * Arrancamos el playonlinux y generamos una nueva máquina de Wine. Para ello, pulsamos el botón **Configure**
 ![Crear máquina de Wine][playonlinux-jugallengua-create-vm]
 

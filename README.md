@@ -27,7 +27,7 @@ Capítulos
 * [N4D](src/n4d/n4d.md)
 * [lliurex-up](src/lliurex-up/lliurex-up.md)
 * [Jugallengua](src/playonlinux/jugallengua.md)
-
+* [Java](src/java/java.md)
 
 Agradecimientos
 ---------------
@@ -45,4 +45,3 @@ Esto no sería posible sin ellos:
 Próximos episodios:
 -------------------
 
-[N4D]

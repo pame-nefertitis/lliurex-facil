@@ -23,6 +23,7 @@ Capítulos
 * [LTSP en LliureX](src/lliurex-ltsp/lliurex-ltsp.md)
 * [Instalación por red](src/network-install/network-install.md)
 * [Inicialización del servidor](src/zero-server-wizard/zero-server-wizard.md)
+* [dconf](src/dconf/dconf.md)
 * [N4D](src/n4d/n4d.md)
 * [lliurex-up](src/lliurex-up/lliurex-up.md)
 * [Jugallengua](src/playonlinux/jugallengua.md)

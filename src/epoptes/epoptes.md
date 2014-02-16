@@ -32,7 +32,7 @@ _Epoptes_ se encuentra en el menú:
 
 
 
-Utilización de Epoptes
+Uso de Epoptes
 ----------------------
 
 Cuando se lanza el _Epoptes_ desde el servidor de aula (o desde un cliente ligero) con un usuario profesor, lo que se muestra es una pantalla de autenticación para comprobar que el usuario que está lanzando el _Epoptes_ tiene permisos para poder controlar a los otros usuarios del aula. Bastará con que se introduzca el usuario y la contraseña del usuario y si son correctos _Epotes_ se lanzará.
@@ -54,7 +54,12 @@ Si un cliente todavía no ha iniciado sesión, es decir, el alumno no ha introdu
 
 
 Una vez el usuario ha iniciado la sesión _Epoptes_ permite una serie de acciones que se pueden ejecutar en el equipo. Las acciones aparecen en la barra de botones de _Epoptes_ y cuando pulsamos el botón sobre uno o varios equipos seleccionados. 
+![Botones de acciones](./../../imgs/epoptes/epoptes_botonera.png)
 
-![Aula](./../../imgs/epoptes/epoptes_menu_principal_cas_60.png)
+<!--![Aula](./../../imgs/epoptes/epoptes_menu_principal_cas_60.png)-->
+
+
+
+
 
 

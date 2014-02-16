@@ -154,8 +154,8 @@ Otra de las opciones que permite este menú es la ejecución remota de aplicacio
 ![Ejecutar una orden](./../../imgs/epoptes/epoptes_acciones_ejecutar_ejecutar_cas.png)
 
 Y en los clientes se lanzará el Scratch
-
-![Ejecutar una orden en los clientes](./../../imgs/epopte/ThinClient_ejecutar_cas.png)
+s
+![Ejecutar una orden en los clientes](./../../imgs/epoptes/ThinClient_ejecutar_cas.png)
 
 #### Enviar mensaje
 

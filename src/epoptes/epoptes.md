@@ -125,9 +125,9 @@ Cuando pulsamos sobre la opción de ejecutar, lo que se muestra es una ventana c
 
 ![Ejecutar](./../../imgs/epoptes/epoptes_ejecutar_ejecutar_1_cas.png)
 
-En este cuadro se indica que si se introduce una página web, lo que se hará en los ordenadores de los clientes es abrirla con el navegador. 
+En este cuadro se indica que si se introduce una página web, lo que se hará en los ordenadores de los clientes es abrirla con el navegador. También permite el envio de ficheros a los alumnos y la ejecución de ordenes en los clientes. A continuación se muestran algunos ejemplos de uso.
 
-##### Ejemplo de uso
+##### Ejemplo de uso de página Web
 
 Si se busca una actividad en la que el alumnado ha de buscar cierta información en la _Wikipedia_ y utilizarla a continuación en un ejercicio que se ha elaborado. El docente copia y pega la URL de la Wikipedia donde ha de empezar a buscar el alumnado en el cuadro de Ejecutar.
 
@@ -137,6 +137,17 @@ Cuando se pulsa ejecutar, en los ordenadores clientes se abrirá el navegador pr
 
 ![Ejecutar URL en los clientes](./../../imgs/epoptes/ThinClient_ejecutar_1_cas.png)
 
+##### Ejemplo de uso de envio de ficheros
+
+Si en vez de pegar una URL de internet, lo que hacemos es introducir la ruta hasta un documento o archivo de nuestro equipo lo que hará _Epoptes_ es enviar ese archivo a los clientes y lo abrirá. Una manera muy sencilla de utilizar esta herramienta es arrastar y soltar un documento en PDF (por ejemplo un exámen) sobre el cuadro de texto de _Ejecutar_, tal y como se muestra en la imágen:
+
+![Ejecutar archivo](./../../imgs/epoptes/epoptes_ejecutar_archivo_1_cas_60.png)
+
+Y al pulsar ejecutar, los ordenadores clientes recibirán el archivo y lo abrirán.
+
+![Ejecutar archivo en los clientes](./../../imgs/epoptes/ThinClient_ejecutar_archivo_2_cas.png)
+
+#### Ejemplo de uso de 
 
 #### Enviar mensaje
 

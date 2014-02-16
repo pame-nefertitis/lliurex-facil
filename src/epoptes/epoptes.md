@@ -28,7 +28,7 @@ _Epoptes_ se encuentra en el menú:
 
 -Aplicaciones-->Administración de LliureX-->Epoptes
 
-![Where](./../../imgs/epoptes/epoptes_donde_esta_cas.60.png)
+![Where](./../../imgs/epoptes/epoptes_donde_esta_cas_60.png)
 
 
 
@@ -37,7 +37,7 @@ Utilización de Epoptes
 
 Cuando se lanza el _Epoptes_ desde el servidor de aula (o desde un cliente ligero) con un usuario profesor, lo que se muestra es una pantalla de autenticación para comprobar que el usuario que está lanzando el _Epoptes_ tiene permisos para poder controlar a los otros usuarios del aula. Bastará con que se introduzca el usuario y la contraseña del usuario y si son correctos _Epotes_ se lanzará.
 
-![Permisos](./../../imgs/epoptes/epoptes_profes_en.60.png)
+![Permisos](./../../imgs/epoptes/epoptes_profes_en_60.png)
 
 
 

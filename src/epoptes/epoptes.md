@@ -147,7 +147,15 @@ Y al pulsar ejecutar, los ordenadores clientes recibirán el archivo y lo abrir�
 
 ![Ejecutar archivo en los clientes](./../../imgs/epoptes/ThinClient_ejecutar_archivo_2_cas.png)
 
-#### Ejemplo de uso de 
+#### Ejemplo de uso de ejecución de comando
+
+Otra de las opciones que permite este menú es la ejecución remota de aplicaciones. Para ello bastará con se introduzca la orden que se desee ejecutar en el diálogo y se pulse _Ejecutar_.
+
+![Ejecutar una orden](./../../imgs/epoptes/epoptes_acciones_ejecutar_ejecutar_cas.png)
+
+Y en los clientes se lanzará el Scratch
+
+![Ejecutar una orden en los clientes](./../../imgs/epopte/ThinClient_ejecutar_cas.png)
 
 #### Enviar mensaje
 

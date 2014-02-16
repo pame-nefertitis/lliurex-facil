@@ -159,9 +159,71 @@ s
 
 #### Enviar mensaje
 
+En el menú de _Enviar mensaje_ se muestra al docente una ventana que permite redactar un texto que será mostrado a los alumnos. Bastará con rellenar los campos con el texto que se desee y pulsar el botón de _Enviar_
 
+![Enviar un mensaje](./../../imgs/epoptes/epoptes_ejecutar_mensaje_1_cas.png)
+
+En los equipos seleccionados aparecerá el mensaje en primer plano.
+
+![Enviar un mensaje en los clientes](./../../imgs/epoptes/ThinClient_ejecutar_mensaje_2_cas.png)
+
+>Nota:
+> 
+> Si se marca la casilla de "Utilizar pango markup", se permite usar marcas de HTML para el texto, tales como:
+> <b>Negrita</b>
+> <i>Cursiva</i>
+> 
 
 #### Abrir un terminal
+
+En el submenú de _Ejecutar_ : Abrir un terminal nos aparecen tres opciones:
+
+* Usuario, local
+* Root, local
+* Root, remoto
+
+![Ejecutar un terminal](./../../imgs/epoptes/epoptes_ejecutar_terminal_menu.png)
+
+A continuación se detalla el funcionamiento de estas tres opciones.
+
+##### Usuario,local
+
+Cuando se pulsa esta opción _Epoptes_ abre un terminal con la sesión del usuario en el servidor, permitiendo desde la línea de comandos ejecutar acciones como el mismo usuario que ha iniciado sesión en el cliente. Esto puede ser útil para comprobar si tiene permisos para entrar a determinadas carpetas, ver los archivos que tiene, o tareas que pueda ejecutar él. 
+
+Este es el aspecto que tiene la terminal de usuario que se muestra _localmente_ al servidor:
+
+![Usuario, local](./../../imgs/epoptes/epoptes_terminal_usuari_local_val.png)
+
+##### Root, local
+
+En este caso _Epoptes_ abre un terminal del usuario _root_ (Administrador) del cliente de manera _local_ al servidor de _Epoptes_. Es decir en el ordenador donde se está ejecutando el _Epoptes_. Este terminal permite ejecutar todas las ordenes, cambiar permisos, borrar archivos, etc. Puede ser utilizado para instalar paquetes, tareas de diágnostico,...
+
+![Root, local](./../../imgs/epoptes/epoptes_terminal_root_local_val.png)
+
+##### Root, remoto
+
+En esta última opción _Epoptes_ abre la misma terminal de _root_ pero en el ordenador cliente, permitiendo a este ejecutar todas las ordenes y realizar tareas que requieren de todos los permisos.
+
+![Root, remoto](./../../imgs/epoptes/ThinClient_ejecutar_root_remoto.png)
+
+
+### Acciones de Restricciones
+
+Desde el menú _Restricciones_, _Epoptes_ permite:
+
+* Bloquear/desbloquear pantalla
+* Activar/desactivar sonido
+
+Esto es interesante para impedir que el alumno se distraiga en el caso de que se esté explicando algo en la pizarra. O para captar la atención del mismo sobre lo que se está exponiendo en clase.
+
+![Restricciones](./../../imgs/epoptes/epoptes_restricciones_menu_cas.png)
+
+### Información
+
+
+
+
+
 
 
 

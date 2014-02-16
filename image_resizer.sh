@@ -28,5 +28,5 @@ cd ${PATH_TO_DIR_IMAGES}
 for f in $(ls -1 *.png); do 
     echo Working with ${f}
     NEW_NAME=$(echo $(basename ${f} .png))
-    convert ${f} -resize ${SCALE}% ${NEW_NAME}.${SCALE}.png
+    convert ${f} -resize ${SCALE}% ${NEW_NAME}_${SCALE}.png
 done

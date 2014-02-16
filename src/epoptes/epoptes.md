@@ -220,7 +220,7 @@ Esto es interesante para impedir que el alumno se distraiga en el caso de que se
 
 ### Información
 
-
+![Información](./../../imgs/epoptes/epoptes_info_cas.png)
 
 
 

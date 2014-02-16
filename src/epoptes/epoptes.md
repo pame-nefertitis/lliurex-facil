@@ -90,9 +90,42 @@ Desde el menú _Sesión_, _Epoptes_ permite:
 * Reiniciar el equipos
 * Apagarlo
 
+Todas estas acciones tienen que ver con la sesión del usuario o con el propio equipo (_Apagar_ o _Reiniciar_).
 
-![Menú Sesión](./../../imgs/epoptes/epoptes_sesion_menu_cas_60.png)
+![Menú de sesión](./../../imgs/epoptes/epoptes_sesion_menu_cas_60.png)
 
+### Acciones de Emisiones
+
+Las acciones dentro del menú de _Emisiones_ permiten ver lo que está haciendo el alumnando e interactuar con él, controlando su sesión o mostrando esa sesión al resto del alumnado para que vean como está realizando la tarea que se haya indicado. A continuación se muestra un breve resumen de cada una de las opciones.
+
+* Ver alumno: Muestra lo que está haciendo el usuario, pero sin interactuar con él.
+* Controlar alumno: Muestra lo que está haciendo el usuario, pero permite al profesor tomar el control del equipo, así como del ratón y el teclado.
+* Demostración: Comienza una demostración que muestra al resto de la clase lo que está haciendo ese equipo, permitiendo así al usuario hacer una demostración de como se hace determinada actividad, una resolución de una práctica, etc.
+* Demostración (Ventana): Lo mismo que en el punto anterior pero tan solo de determinada ventana del equipo.
+* Parar las demostraciones: Detiene todas las demostraciones activas. 
+
+![Menú de emisiones](./../../imgs/epoptes/epoptes_difusion_menu_cas_60.png)
+
+### Acciones de Ejecutar
+
+En este menú se muestran acciones que interactuan con el alumnado ejecutando o abriendo determinados programas en el equipo. Es en este menú donde el docente encontrará opciones para enviarle al alumnado ficheros, abrirlos, enviar páginas Web, e incluso ejecutar terminales con privilegios en los equipos para tareas de mantenimiento.
+
+Las opciones que se muestran en el primer nivel de menú dentro de _Ejecutar_ son:
+
+* Ejecutar.
+* Enviar mensaje. 
+* Abrir un terminal.
+
+
+A continuación se detallan estas acciones de manera individual.
+
+#### Ejecutar 
+
+Cuando pulsamos sobre la opción de ejecutar, lo que se muestra es una ventana como la siguiente:
+
+![Ejecutar](./../../imgs/epoptes/epoptes_ejecutar_ejecutar_1_cas.png)
+
+En este cuadro se indica que si se introduce una página web, lo que se hará en los ordenadores de los clientes es abrirla con el navegador.  
 
 
 

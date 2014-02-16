@@ -26,9 +26,9 @@ Todas estas acciones pueden actuar sobre un sólo equipo, varios seleccionados o
 
 _Epoptes_ se encuentra en el menú: 
 
--Aplicaciones-->Administración de LliureX-->Epoptes
+-Aplicaciones-->Administración LliureX-->Epoptes
 
-![Where](./../../imgs/epoptes/epoptes_donde_esta_cas_60.png)
+![Situación en el menú](./../../imgs/epoptes/epoptes_donde_esta_cas_60.png)
 
 
 
@@ -40,5 +40,21 @@ Cuando se lanza el _Epoptes_ desde el servidor de aula (o desde un cliente liger
 ![Permisos](./../../imgs/epoptes/epoptes_profes_en_60.png)
 
 
+A continuación se muestra una ventana donde se pueden ver todos los equipos que hay en ese momento en el aula encendidos y que _Epoptes_ puede manejar. 
+
+> Nota:
+> 
+> Es importante recordar que el proceso mediante el que servidor de _Epoptes_ se comunica con los clientes requiere que esté encendido el servidor antes de que los clientes del aula vayan arrancando.
+> Si un cliente de aula se inicia antes de que el servidor del aula haya arrancado del todo, puede que _Epoptes_ no lo detecte (y que también fallen otros servicios del aula). Bastará con reiniciar ese equipo para que todo vuelva a funcionar correctamente.
+
+
+Si un cliente todavía no ha iniciado sesión, es decir, el alumno no ha introducido su usuario y su contraseña todavía _Epoptes_ no puede mostrar el escritorio de ese usuario y lo que se vé es un pequeño ordenador que muestra en su pantalla el tipo de cliente (*ligero* o *pesado*) que arrancará cuando el alumno introduzca su usuario y contraseña.
+
+![Ligero o Pesado](./../../imgs/epoptes/epoptes_fat_thin_client_crop.png)
+
+
+Una vez el usuario ha iniciado la sesión _Epoptes_ permite una serie de acciones que se pueden ejecutar en el equipo. Las acciones aparecen en la barra de botones de _Epoptes_ y cuando pulsamos el botón sobre uno o varios equipos seleccionados. 
+
+![Aula](./../../imgs/epoptes/epoptes_menu_principal_cas_60.png)
 
 

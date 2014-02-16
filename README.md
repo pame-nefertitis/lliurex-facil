@@ -29,6 +29,18 @@ Capítulos
 * [Jugallengua](src/playonlinux/jugallengua.md)
 * [Java](src/java/java.md)
 
+
+
+Herramientas
+------------
+
+La suite de herramientas que se han utilizado para la  elaboración de estos materiales son las siguientes:
+
+* pandoc
+* imagemagick
+* vim
+* libreoffice
+
 Agradecimientos
 ---------------
 

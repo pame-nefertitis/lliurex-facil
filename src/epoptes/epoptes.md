@@ -220,7 +220,18 @@ Esto es interesante para impedir que el alumno se distraiga en el caso de que se
 
 ### Información
 
+El último botón del menú es _Información_, cuando se pulsa este muestra detalles del cliente conectado a _Epoptes_
+
 ![Información](./../../imgs/epoptes/epoptes_info_cas.png)
+
+Entre esta información cabe destacar:
+
+* Tipo de cliente: Si es un Cliente pesado, ligero o instalado.
+* Nombre del alumno: El alumno que ha iniciado sesión. 
+* Dirección IP: Dirección de la red del aula que está utilizando este cliente
+* Usuario: Nombre y apellidos.
+* Algunos datos técnicos del cliente, tales como la memoria RAM, el procesador, etc. 
+
 
 
 

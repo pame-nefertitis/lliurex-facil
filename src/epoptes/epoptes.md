@@ -125,8 +125,24 @@ Cuando pulsamos sobre la opción de ejecutar, lo que se muestra es una ventana c
 
 ![Ejecutar](./../../imgs/epoptes/epoptes_ejecutar_ejecutar_1_cas.png)
 
-En este cuadro se indica que si se introduce una página web, lo que se hará en los ordenadores de los clientes es abrirla con el navegador.  
+En este cuadro se indica que si se introduce una página web, lo que se hará en los ordenadores de los clientes es abrirla con el navegador. 
 
+##### Ejemplo de uso
+
+Si se busca una actividad en la que el alumnado ha de buscar cierta información en la _Wikipedia_ y utilizarla a continuación en un ejercicio que se ha elaborado. El docente copia y pega la URL de la Wikipedia donde ha de empezar a buscar el alumnado en el cuadro de Ejecutar.
+
+![Ejecutar URL](./../../imgs/epoptes/epoptes_ejecutar_ejecutar_2_cas.png)
+
+Cuando se pulsa ejecutar, en los ordenadores clientes se abrirá el navegador predeterminado (en el aula LliureX es el Firefox) y mostrará dicha página.
+
+![Ejecutar URL en los clientes](./../../imgs/epoptes/ThinClient_ejecutar_1_cas.png)
+
+
+#### Enviar mensaje
+
+
+
+#### Abrir un terminal
 
 
 

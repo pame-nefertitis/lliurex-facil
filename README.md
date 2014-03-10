@@ -29,7 +29,7 @@ Capítulos
 * [lliurex-up](src/lliurex-up/lliurex-up.md)
 * [Jugallengua](src/playonlinux/jugallengua.md)
 * [Java](src/java/java.md)
-* [Infraestructura](src/infraestructura/index.md)
+* [Infraestructura](src/infraestructure/index.md)
 
 
 

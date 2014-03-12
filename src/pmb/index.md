@@ -1,4 +1,22 @@
 1-Instalador se encuentra en centro de control, pulsar para iniciar instalación
+[Captura](./../../imgs/pmb/cap1.png)
+![Captura](./../../imgs/pmb/cap2.png)
+![Captura](./../../imgs/pmb/cap3.png)
+![Captura](./../../imgs/pmb/cap4+paciencia.png)
+![Captura](./../../imgs/pmb/cap5.png)
+![Captura](./../../imgs/pmb/cap6a-desktop.png)
+![Captura](./../../imgs/pmb/cap6b.png)
+![Captura](./../../imgs/pmb/cap7.png)
+![Captura](./../../imgs/pmb/cap8_OPAC.png)
+![Captura](./../../imgs/pmb/cap9.png)
+![Captura](./../../imgs/pmb/cap10.png)
+![Captura](./../../imgs/pmb/cap11.png)
+![Captura](./../../imgs/pmb/cap12.png)
+![Captura](./../../imgs/pmb/cap13.png)
+![Captura](./../../imgs/pmb/cap14.png)
+![Captura](./../../imgs/pmb/cap15.png)
+![Captura](./../../imgs/pmb/cap16.png)
+!
 2-Confirmar que ses desea instalar, este proceso es prolongado
 3-se inicia descarga e instalación
 4-Se ha completado la instalación

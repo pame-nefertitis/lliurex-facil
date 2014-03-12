@@ -11,18 +11,36 @@ Lo encontramos en la categoría _Software_
 
 ![Captura](./../../imgs/pmb/cap1.png)
 
+Cuando se hace clic sobre él botón de instalación del *PMB* se muestra un mensaje indicando que el proceso va a tomar cierto tiempo.
+
 ![Captura](./../../imgs/pmb/cap2.png)
+
+Se muestra un progreso en el que se ven los paquetes que son necesarios para el correcto funcionamiento del PMB.
 
 ![Captura](./../../imgs/pmb/cap3.png)
 
+Por último se muestra un aviso de que la instalación ha tenido éxito.
+
 ![Captura](./../../imgs/pmb/cap4+paciencia.png)
+
+Se puede comprobar que el botón de la instalación ha sido deshabilitado.
+
+![Captura](./../../imgs/pmb/cap5.png)
 
 
 Uso del PMB
 -----------
 
-![Captura](./../../imgs/pmb/cap5.png)
+Una vez el PMB está instalado para utilizarlo podemos acceder a él desde : _Aplicaciones->Oficina_
+
 ![Captura](./../../imgs/pmb/cap6a-desktop.png)
+
+Lo que hace es abrir el navegador indicando la dirección del PMB en nuestro equipo. En el aula _LliureX_ o en la instalación de Bibliotecas la dirección es :
+
+```
+http://pmb
+```
+
 ![Captura](./../../imgs/pmb/cap6b.png)
 ![Captura](./../../imgs/pmb/cap7.png)
 ![Captura](./../../imgs/pmb/cap8_OPAC.png)

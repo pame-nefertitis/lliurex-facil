@@ -9,11 +9,11 @@ Para instalar el *PMB*, hay que ir al *Centro de contro de LliureX* en el menú:
 
 Lo encontramos en la categoría _Software_
 
-![Captura](./../../imgs/pmb/cap3.png)
+![Captura](./../../imgs/pmb/cap1.png)
 
 ![Captura](./../../imgs/pmb/cap2.png)
 
-![Captura](./../../imgs/pmb/cap1.png)
+![Captura](./../../imgs/pmb/cap3.png)
 
 ![Captura](./../../imgs/pmb/cap4+paciencia.png)
 

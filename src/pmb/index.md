@@ -1,8 +1,26 @@
-1-Instalador se encuentra en centro de control, pulsar para iniciar instalación
-[Captura](./../../imgs/pmb/cap1.png)
-![Captura](./../../imgs/pmb/cap2.png)
+PMB
+===
+
+
+Instalación del PMB
+-------------------
+
+Para instalar el *PMB*, hay que ir al *Centro de contro de LliureX* en el menú: _Administración de LliureX_
+
+Lo encontramos en la categoría _Software_
+
 ![Captura](./../../imgs/pmb/cap3.png)
+
+![Captura](./../../imgs/pmb/cap2.png)
+
+![Captura](./../../imgs/pmb/cap1.png)
+
 ![Captura](./../../imgs/pmb/cap4+paciencia.png)
+
+
+Uso del PMB
+-----------
+
 ![Captura](./../../imgs/pmb/cap5.png)
 ![Captura](./../../imgs/pmb/cap6a-desktop.png)
 ![Captura](./../../imgs/pmb/cap6b.png)

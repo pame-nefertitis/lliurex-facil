@@ -24,6 +24,7 @@ Capítulos
 * [Epoptes](src/epoptes/epoptes.md)
 * [Instalación por red](src/network-install/network-install.md)
 * [Inicialización del servidor](src/zero-server-wizard/zero-server-wizard.md)
+* [PMB](src/pmb/index.md)
 * [dconf](src/dconf/dconf.md)
 * [N4D](src/n4d/n4d.md)
 * [lliurex-up](src/lliurex-up/lliurex-up.md)
@@ -55,6 +56,10 @@ Esto no sería posible sin ellos:
 * Enrique M.G. *@Lt_Henry*
 * turix *@turix_*
 * David Montalva *@dmontalva*
+* Vicent Balaguer *@vbalaguern*
+* Jaime Munyoz Fayos *@JaimeMunyoz*
+* Miguel Garcia Gomez *@SinTwitter*
+
 
 Próximos episodios:
 -------------------

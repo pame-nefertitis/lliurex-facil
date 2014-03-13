@@ -75,7 +75,7 @@ Si ya era usuario de pmb puede restaurar la copia de seguridad en ...
 ![Captura](./../../imgs/pmb/cap12.png)
 ![Captura](./../../imgs/pmb/cap13.png)
 
-Si su copia de seguridad proviene de lliurex 12.09 le indicará que ha de actualizar la base de datos.
+Si su copia de seguridad proviene de lliurex 12.06 le indicará que ha de actualizar la base de datos.
 
 ![Captura](./../../imgs/pmb/cap14.png)
 

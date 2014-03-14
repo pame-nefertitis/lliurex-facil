@@ -88,13 +88,22 @@ Desde esta pantalla el usuario puede consultar el catálogo de libros, realizar 
 
 ![Captura](./../../imgs/pmb/cap8_OPAC.png)
 
+Búsqueda simple
+---------------
 
+Si introduces una palabra en la zona de texto de *Búsqueda*, el OPAC mostrará el resultado de tu búsqueda. Para afinar el resultado de la búsqueda, puedes marcar o desmarcar los campos en dónde se buscará: título, autor, colección...
+
+El OPAC de PMB conserva durante la duración de la sesión las búsquedas que realizas y se encuentran disponibles en el apartado *Historial”.
 
 
 Administración del PMB
 ----------------------
 
+A continuación se presentan unas capturas que muestran las posibilidades del módulo de administración.
+
 ![Captura](./../../imgs/pmb/cap9.png)
+
+
 ![Captura](./../../imgs/pmb/cap10.png)
 
 
@@ -120,4 +129,12 @@ Pulse sobre el texto actualizar.
 ![Captura](./../../imgs/pmb/cap16.png)
 
 Se ha completado la actualización ya puede trabajar normalmente.
+
+
+Manual extendido
+-----------------
+
+Se puede encontrar un manual más extenso del uso del PMB en:
+
+
 

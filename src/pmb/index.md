@@ -136,5 +136,6 @@ Manual extendido
 
 Se puede encontrar un manual más extenso del uso del PMB en:
 
+![Manual](./../../rsrc/pmb/manual_pmb_1009.pdf)
 
 

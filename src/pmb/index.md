@@ -57,7 +57,10 @@ http://pmb
 
 ![Captura](./../../imgs/pmb/cap6b.png)
 
-El usuario y la contraseña por defecto es _admin_ , es una buena idea cambiarlo más adelante. Como se puede ver, también es posible acceder a la parte del cliente de PMB (_OPAC_) desde esa ventana principal. Los usuarios de la biblioteca utilizarán esta interfaz para la realización de las tareas más habituales en la biblioteca.
+
+Por defecto, si no se ha creado ninguna cuenta de usuario, puede conectarse con el nombre de usuario _admin_ ; y la contraseña _admin_. El administrador del sistema puede añadir nuevos administradores y modificar los datos y permisos de los existentes.
+
+Es una buena idea cambiarlo más adelante. Como se puede ver, también es posible acceder a la parte del cliente de PMB (_OPAC_) desde esa ventana principal. Los usuarios de la biblioteca utilizarán esta interfaz para la realización de las tareas más habituales en la biblioteca.
 
 ![Captura](./../../imgs/pmb/cap7.png)
 
@@ -66,10 +69,26 @@ Se detallan ahora las opciones más importantes que pueden realizar los usuarios
 OPAC
 ----
 
+_OPAC_ significa _O_nline _P_ublic _A_ccess _C_atalog. El módulo _OPAC_ permite a los usuarios efectuar una búsqueda en el catálogo de la biblioteca.
+
+De hecho, el módulo _OPAC_ de _PMB_ corresponde a un WebPAC : Búsquedas de Catálogo accessible vía Web.
+
+El OPAC de PMB está formado por 3 zonas principales de información:
+
+* Una zona de “búsqueda” en la parte superior de la página.
+* En la parte inferior derecha se muestran las categorías. Existe la posibilidad de mostrar más bloques de información en esta sección. Todo esto es configurable desde la Administración.
+* La parte de la izquierda ofrece la posibilidad de que el usuario se identifique con su número de carné. Este apartado incluye también los datos de la biblioteca o del centro de documentación. Estos datos se configuran
+también en 
+
+```
+*Administración > Herramientas > Parámetros. *
+```
 
 Desde esta pantalla el usuario puede consultar el catálogo de libros, realizar reservas y consultar sus préstamos. 
 
 ![Captura](./../../imgs/pmb/cap8_OPAC.png)
+
+
 
 
 Administración del PMB

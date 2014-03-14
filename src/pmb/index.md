@@ -1,6 +1,20 @@
 PMB
 ===
 
+Características generales
+------------------------
+
+_PMB_ es un *SIGB* (_Sistema Integrado de Gestión de Bibliotecas_) completamente libre.
+Se trata de una aplicación web que se basa en un servidor HTTP (básicamente Apache, aunque no es obligatorio),
+una base de datos MySQL y el lenguaje PHP. PMB se beneficia de la flexibilidad de las aplicaciones de Internet.
+Consideraciones previas a tener en cuenta:
+
+* Los botones del navegador página anterior y página siguiente permiten la navegación de una página a otra en PMB.
+* El botón del navegador Actualizar la página permite volver a cargar en pantalla la página del PMB.
+* Cuando se lea en la pantalla un mensaje que empieza por “Actualizando” no se debe hacer clic sobre el botón de página anterior, es necesario dejar que la actualización se realice completamente.
+* Cuando se están realizando operaciones importantes en la base de datos (añadir, eliminar), no se debe parar la carga de una página por que se puede interrumpir el tratamiento de los datos, y puede ser que la base de  datos sufra un deterioro. Sobre todo no se debe pulsar el botón “parar la carga” cuando se esté realizando una restauración de la base de datos, una copia de seguridad o se esté optimizando la base de datos.
+
+
 
 Instalación del PMB
 -------------------

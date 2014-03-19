@@ -20,8 +20,9 @@ Instalamos el thunderbird en Windows:
 
 ### Otros recursos
 
-*[mozillazine.org](http://kb.mozillazine.org/Import_from_Outlook_Express)
-*[forums.mozillazine](http://forums.mozillazine.org/viewtopic.php?f=28&t=2065217)
+* [mozillazine.org](http://kb.mozillazine.org/Import_from_Outlook_Express)
+
+* [forums.mozillazine](http://forums.mozillazine.org/viewtopic.php?f=28&t=2065217)
 
 
 

@@ -33,6 +33,13 @@ Capítulos
 * [Infraestructura](src/infraestructure/index.md)
 
 
+Migración Windows -> LinuX
+---------------------------
+
+Se presentan algunos problemas a la hora de migrar los puestos de trabajo de Windows a LinuX. En este apartado aparecerán scripts, manuales, guias cortas, que muestran como se puede realizar la migración del puesto de trabajo Windows a LinuX. 
+
+* [Migración](src/migracion/index.md)
+
 
 Herramientas
 ------------

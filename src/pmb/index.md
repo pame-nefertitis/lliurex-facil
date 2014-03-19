@@ -1,6 +1,20 @@
 PMB
 ===
 
+Características generales
+------------------------
+
+_PMB_ es un *SIGB* (_Sistema Integrado de Gestión de Bibliotecas_) completamente libre.
+Se trata de una aplicación web que se basa en un servidor HTTP (básicamente Apache, aunque no es obligatorio),
+una base de datos MySQL y el lenguaje PHP. PMB se beneficia de la flexibilidad de las aplicaciones de Internet.
+Consideraciones previas a tener en cuenta:
+
+* Los botones del navegador página anterior y página siguiente permiten la navegación de una página a otra en PMB.
+* El botón del navegador Actualizar la página permite volver a cargar en pantalla la página del PMB.
+* Cuando se lea en la pantalla un mensaje que empieza por “Actualizando” no se debe hacer clic sobre el botón de página anterior, es necesario dejar que la actualización se realice completamente.
+* Cuando se están realizando operaciones importantes en la base de datos (añadir, eliminar), no se debe parar la carga de una página por que se puede interrumpir el tratamiento de los datos, y puede ser que la base de  datos sufra un deterioro. Sobre todo no se debe pulsar el botón “parar la carga” cuando se esté realizando una restauración de la base de datos, una copia de seguridad o se esté optimizando la base de datos.
+
+
 
 Instalación del PMB
 -------------------
@@ -42,27 +56,86 @@ http://pmb
 ```
 
 ![Captura](./../../imgs/pmb/cap6b.png)
+
+
+Por defecto, si no se ha creado ninguna cuenta de usuario, puede conectarse con el nombre de usuario _admin_ ; y la contraseña _admin_. El administrador del sistema puede añadir nuevos administradores y modificar los datos y permisos de los existentes.
+
+Es una buena idea cambiarlo más adelante. Como se puede ver, también es posible acceder a la parte del cliente de PMB (_OPAC_) desde esa ventana principal. Los usuarios de la biblioteca utilizarán esta interfaz para la realización de las tareas más habituales en la biblioteca.
+
 ![Captura](./../../imgs/pmb/cap7.png)
+
+Se detallan ahora las opciones más importantes que pueden realizar los usuarios de la biblioteca a través de la interfaz de la _OPAC_
+
+OPAC
+----
+
+_OPAC_ significa _O_nline _P_ublic _A_ccess _C_atalog. El módulo _OPAC_ permite a los usuarios efectuar una búsqueda en el catálogo de la biblioteca.
+
+De hecho, el módulo _OPAC_ de _PMB_ corresponde a un WebPAC : Búsquedas de Catálogo accessible vía Web.
+
+El OPAC de PMB está formado por 3 zonas principales de información:
+
+* Una zona de “búsqueda” en la parte superior de la página.
+* En la parte inferior derecha se muestran las categorías. Existe la posibilidad de mostrar más bloques de información en esta sección. Todo esto es configurable desde la Administración.
+* La parte de la izquierda ofrece la posibilidad de que el usuario se identifique con su número de carné. Este apartado incluye también los datos de la biblioteca o del centro de documentación. Estos datos se configuran
+también en 
+
+```
+*Administración > Herramientas > Parámetros. *
+```
+
+Desde esta pantalla el usuario puede consultar el catálogo de libros, realizar reservas y consultar sus préstamos. 
+
 ![Captura](./../../imgs/pmb/cap8_OPAC.png)
+
+Búsqueda simple
+---------------
+
+Si introduces una palabra en la zona de texto de *Búsqueda*, el OPAC mostrará el resultado de tu búsqueda. Para afinar el resultado de la búsqueda, puedes marcar o desmarcar los campos en dónde se buscará: título, autor, colección...
+
+El OPAC de PMB conserva durante la duración de la sesión las búsquedas que realizas y se encuentran disponibles en el apartado *Historial”.
+
+
+Administración del PMB
+----------------------
+
+A continuación se presentan unas capturas que muestran las posibilidades del módulo de administración.
+
 ![Captura](./../../imgs/pmb/cap9.png)
+
+
 ![Captura](./../../imgs/pmb/cap10.png)
+
+
+Copias de seguridad
+-------------------
+
 ![Captura](./../../imgs/pmb/cap11.png)
+
+Si ya era usuario de pmb puede restaurar la copia de seguridad en ...
+
 ![Captura](./../../imgs/pmb/cap12.png)
 ![Captura](./../../imgs/pmb/cap13.png)
+
+Si su copia de seguridad proviene de lliurex 12.06 le indicará que ha de actualizar la base de datos.
+
 ![Captura](./../../imgs/pmb/cap14.png)
+
+Pulse sobre el texto actualizar.
+
 ![Captura](./../../imgs/pmb/cap15.png)
+
+
 ![Captura](./../../imgs/pmb/cap16.png)
-!
-2-Confirmar que ses desea instalar, este proceso es prolongado
-3-se inicia descarga e instalación
-4-Se ha completado la instalación
-5-Comprobamos que se ha oscurecido el botón de pmb al completar la instalación.
-6a-Se dispone de un icono en para abrir el pmb dentro de aplicaciones oficina.
-6b-Tambíen podemos abrirlo directamente en cualquier navegador escribiendo pmb. El usuario y contraseña por defecto es 'admin' (sin comillas)
-7-Desde la pantalla principal de pmb podemos acceder también a OPAC, interfaz para los usuarios de la biblioteca.
-8-Desde esta pantalla el usuario puede consultar el catálogo de libros, realizar reservas y consultar sus préstamos.
-9-> Si ya era usuario de pmb puede restaurar la copia de seguridad en ...
-14- Si su copia de seguridad proviene de lliurex 12.09 le indicará que ha de actualizar la base de datos.
-15- Pulse sobre el texto actualizar.
-16- Se ha completado la actualización ya puede trabajar normalmente.
+
+Se ha completado la actualización ya puede trabajar normalmente.
+
+
+Manual extendido
+-----------------
+
+Se puede encontrar un manual más extenso del uso del PMB en:
+
+![Manual](./../../rsrc/pmb/manual_pmb_1009.pdf)
+
 

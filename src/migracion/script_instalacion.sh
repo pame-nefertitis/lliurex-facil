@@ -5,6 +5,14 @@ echo "Lo primero es actualizar el equipo"
 
 sudo lliurex-upgrade
 
+
+echo "INSTALACION algunos paquetes"
+sudo apt-get install oracle-java6-installer 
+sudo apt-get install oracle-java7-installer oracle-java7-set-default
+sudo apt-get install filezilla
+sudo apt-get install openssh-server
+
+
 echo "Ahora lo dejamos todo preparado en la carpeta personal"
 cp -r data ~/
 cp -r data-heavy ~/

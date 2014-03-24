@@ -27,10 +27,38 @@ cp -r data/wine/* $HOME/.wine/
 
 #################################
 echo "Accesos directos"
+
+echo "Copiamos los iconso a /opt/"
+sudo cp -r data/icons /opt/
+
+echo "Copiamos los desktops al escritorio"
+
 cp data/desktops/* $HOME/Escritorio/
 
+echo "El del Gesform requiere de trabajo adicional"
 sed -e "s%_@_USER_@_%$HOME%g" $HOME/Escritorio/gesform.desktop
 
 echo "Le damos permisos de ejecución a todos"
 chmod +x $HOME/Escritorio/*.desktop
+
+##################################
+
+echo "FUENTES"
+mkdir -p $HOME/.fonts/|| echo "Ya esta creado"
+cp -r data/ttf/* $HOME/.fonts/
+
+##################################
+
+
+
+echo "CUPS"
+echo "FTP"
+echo "Accesos directos barra:"
+echo "      Firefox"
+echo "      Apagar"
+echo "Salt"
+
+
+## Portafirmas (Salva)
+
 

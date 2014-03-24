@@ -1,0 +1,3556 @@
+*PPD-Adobe: "4.3"
+
+*% Adobe Systems PostScript(R) Printer Description File
+*% Copyright 1987-1994 Adobe Systems Incorporated.
+*% All Rights Reserved.
+*% Permission is granted for redistribution of this file as
+*% long as this copyright notice is intact and the contents
+*% of the file is not altered in any way from its original form.
+*%
+*% Copyright (c) 2007 - 2012 SOFHA GmbH
+*%
+*% PPD Version:      1.2.179
+*% Language Version: ES - 429.2
+*% --------------- General Information ---------------
+
+*FileVersion:      "1.2.179"
+*FormatVersion:    "4.3"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion:  Spanish
+*Manufacturer:     "RISO"
+*ModelName:        "RISO HC5500-IS700CG PS v1.2"
+*ShortNickName:    "RISO HC5500-IS700CG PS v1.2"
+*NickName:         "RISO ComColorExpress IS700C-G v1.2"
+*Product:          "(IS7G)"
+*PCFileName:       "SHPS_Z1A.ppd"
+*PSVersion:        "(3017.102) 0"
+
+*% --------------- System Management ---------------
+
+*FreeVM: "314572800"
+*VMOption None: "314572800"
+*Reset: "
+    count 0 eq
+    { false } { true exch startjob } ifelse not
+        {
+        (WARNING: Cannot reset printer.) =
+        (Missing or invalid password.) =
+        (Please contact the author of this software.)
+        = flush quit
+        }
+    if systemdict /quit get exec
+    (WARNING : Printer Reset Failed.) = flush"
+*End
+*Password: "0"
+*ExitServer: "
+    count 0 eq
+    { false } { true exch startjob } ifelse not
+        {
+        (WARNING: Cannot modify initial VM.) =
+        (Missing or invalid password.) =
+        (Please contact the author of this software.) = flush quit
+        }
+    if"
+*End
+
+*% --------------- Options ---------------
+
+*OpenGroup: InstallableOptions
+
+*% --
+
+*OpenUI *SHOpBookletMaker/Finalizador cuadernillo: PickOne
+*OrderDependency: 10.0 DocumentSetup *SHOpBookletMaker
+*DefaultSHOpBookletMaker: PluginInstalled
+*SHOpBookletMaker PluginInstalled/Administrado por el Plug-In: ""
+*SHOpBookletMaker NotInst/No instalado: ""
+*SHOpBookletMaker Inst/Instalado: ""
+*CloseUI: *SHOpBookletMaker
+
+*% --
+
+*OpenUI *SHOp3Folder/Plegado en tres: PickOne
+*OrderDependency: 10.0 DocumentSetup *SHOp3Folder
+*DefaultSHOp3Folder: PluginInstalled
+*SHOp3Folder PluginInstalled/Administrado por el Plug-In: ""
+*SHOp3Folder NotInst/No instalado: ""
+*SHOp3Folder Inst/Instalado: ""
+*CloseUI: *SHOp3Folder
+
+*% --
+
+*OpenUI *SHOpPaperTypeRegion/Regi<F3>n tipo de papel: PickOne
+*OrderDependency: 10.0 DocumentSetup *SHOpPaperTypeRegion
+*DefaultSHOpPaperTypeRegion: PluginInstalled
+*SHOpPaperTypeRegion PluginInstalled/Administrado por el Plug-In: ""
+*SHOpPaperTypeRegion Roman/Romano: ""
+*SHOpPaperTypeRegion Japanese/Japon<E9>s: ""
+*SHOpPaperTypeRegion WW/Todo el mundo: ""
+*CloseUI: *SHOpPaperTypeRegion
+
+*% --
+
+*OpenUI *SHOpFinisherType/Tipo de acabado: PickOne
+*OrderDependency: 10.0 DocumentSetup *SHOpFinisherType
+*DefaultSHOpFinisherType: PluginInstalled
+*SHOpFinisherType PluginInstalled/Administrado por el Plug-In: ""
+*SHOpFinisherType NotInst/No instalado: ""
+*SHOpFinisherType Stacker/Bandeja: ""
+*SHOpFinisherType 2-3-holes/2/3 orificios: ""
+*SHOpFinisherType 2-4-holes/2/4 orificios: ""
+*CloseUI: *SHOpFinisherType
+
+*% --
+
+*OpenUI *SHOpPPDVersion/Versi<F3>n: PickOne
+*OrderDependency: 10.0 DocumentSetup *SHOpPPDVersion
+*DefaultSHOpPPDVersion: PPDVersion
+*SHOpPPDVersion PPDVersion/1.2.179: "mark {
+    (1.2.179) /PPDVersion /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOpPPDVersion
+
+*% --
+*CloseGroup: InstallableOptions
+
+*% --------------- Basic Device Capabilities ---------------
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*FileSystem: True
+*?FileSystem: "
+    save
+    statusdict /diskstatus known {(True)} {(False)}
+    ifelse = flush
+    restore"
+*End
+*LanguageLevel: "3"
+*DefaultGuaranteedMaxSeparations: 1
+*Throughput: "120"
+*TTRasterizer: Type42
+*?TTRasterizer: "
+    save
+    /resourcestatus where
+        {pop 42 /FontType resourcestatus {pop pop (Type42)}{(None)}ifelse}
+        {(None)}
+    ifelse = flush
+    restore"
+*End
+
+*% --------------- Emulations and Protocols ---------------
+
+*% --------------- Resolution and Appearance Control ---------------
+
+*OpenUI *Resolution/Resoluci<F3>n: PickOne
+*OrderDependency: 200.0 Prolog *Resolution
+*DefaultResolution: 300x300dpi
+*Resolution 300x300dpi/300x300 dpi: "    mark {
+    (300x300dpi) /Resolution /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*Resolution 300x600dpi/300x600 dpi: "    mark {
+    (300x600dpi) /Resolution /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *Resolution
+
+*% --------------- Halftone Information ---------------
+
+*DefaultHalftoneType: 1
+*ScreenFreq: "71"
+*ScreenAngle: "45"
+*DefaultScreenProc: Dot
+*ScreenProc Dot: "
+    {abs exch abs 2 copy add 1 gt
+        {1 sub dup mul exch 1 sub dup mul add 1 sub }
+        {dup mul exch dup mul add 1 exch sub }
+    ifelse}"
+*End
+*ScreenProc Line: "{ pop }"
+*ScreenProc Ellipse: "
+  { dup 5 mul 8 div mul exch dup mul exch add sqrt 1 exch sub }"
+*End
+*% --------------- Media Selection ---------------
+
+*OpenUI *PageSize: PickOne
+*OrderDependency: 220.0 DocumentSetup *PageSize
+*DefaultPageSize: A4
+*PageSize Letter/Letter: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Letter) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 792] >> setpagedevice}
+    ifelse"
+*End
+*PageSize Legal/Legal: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Legal) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 1008] >> setpagedevice}
+    ifelse"
+*End
+*PageSize Tabloid/Tabloid: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Tabloid) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [792 1224] >> setpagedevice}
+    ifelse"
+*End
+*PageSize Foolscap/Foolscap: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Foolscap) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 964] >> setpagedevice}
+    ifelse"
+*End
+*PageSize Statement/Statement: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Statement) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [396 612] >> setpagedevice}
+    ifelse"
+*End
+*PageSize RISOA3W/RISO A3W: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (RISOA3W) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [896 1304] >> setpagedevice}
+    ifelse"
+*End
+*PageSize A3/A3: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (A3) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [842 1191] >> setpagedevice}
+    ifelse"
+*End
+*PageSize A4/A4: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (A4) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [595 842] >> setpagedevice}
+    ifelse"
+*End
+*PageSize A5/A5: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (A5) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [420 595] >> setpagedevice}
+    ifelse"
+*End
+*PageSize B4/B4: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (B4) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [729 1032] >> setpagedevice}
+    ifelse"
+*End
+*PageSize B5/B5: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (B5) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [516 729] >> setpagedevice}
+    ifelse"
+*End
+*PageSize B6/B6: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (B6) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [363 516] >> setpagedevice}
+    ifelse"
+*End
+*PageSize Postcard/Postcard: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Postcard) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [284 419] >> setpagedevice}
+    ifelse"
+*End
+*PageSize EnvKaku0/Kaku 0: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku0) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [814 1083] >> setpagedevice}
+    ifelse"
+*End
+*PageSize EnvKaku1/Kaku 1: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku1) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [765 1083] >> setpagedevice}
+    ifelse"
+*End
+*PageSize EnvKaku2/Kaku 2: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku2) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [680 941] >> setpagedevice}
+    ifelse"
+*End
+*PageSize EnvKaku3/Kaku 3: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku3) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 785] >> setpagedevice}
+    ifelse"
+*End
+*PageSize EnvChou3/Naga 3: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvChou3) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [340 666] >> setpagedevice}
+    ifelse"
+*End
+*PageSize EnvChou4/Naga 4: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvChou4) /PageSize /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [255 581] >> setpagedevice}
+    ifelse"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 220.0 DocumentSetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion Letter/Letter: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Letter) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 792] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion Legal/Legal: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Legal) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 1008] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion Tabloid/Tabloid: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Tabloid) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [792 1224] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion Foolscap/Foolscap: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Foolscap) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 964] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion Statement/Statement: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Statement) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [396 612] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion RISOA3W/RISO A3W: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (RISOA3W) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [896 1304] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion A3/A3: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (A3) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [842 1191] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion A4/A4: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (A4) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [595 842] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion A5/A5: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (A5) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [420 595] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion B4/B4: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (B4) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [729 1032] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion B5/B5: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (B5) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [516 729] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion B6/B6: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (B6) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [363 516] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion Postcard/Postcard: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (Postcard) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [284 419] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion EnvKaku0/Kaku 0: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku0) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [814 1083] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion EnvKaku1/Kaku 1: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku1) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [765 1083] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion EnvKaku2/Kaku 2: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku2) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [680 941] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion EnvKaku3/Kaku 3: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvKaku3) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [612 785] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion EnvChou3/Naga 3: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvChou3) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [340 666] >> setpagedevice}
+    ifelse"
+*End
+*PageRegion EnvChou4/Naga 4: "
+    /SHOptions /ProcSet resourcestatus
+        {pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        (EnvChou4) /PageRegion /SHOptions /ProcSet findresource /setSHOptions get exec}
+        {<< /PageSize [255 581] >> setpagedevice}
+    ifelse"
+*End
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: A4
+*ImageableArea Letter/Letter:       "0 0 612  792"
+*ImageableArea Legal/Legal:         "0 0 612 1008"
+*ImageableArea Tabloid/Tabloid:     "0 0 792 1224"
+*ImageableArea Foolscap/Foolscap:   "0 0 612  964"
+*ImageableArea Statement/Statement: "0 0 396  612"
+*ImageableArea RISOA3W/RISO A3W:     "0 0 896 1304"
+*ImageableArea A3/A3:               "0 0 842 1191"
+*ImageableArea A4/A4:               "0 0 595  842"
+*ImageableArea A5/A5:               "0 0 420  595"
+*ImageableArea B4/B4:               "0 0 729 1032"
+*ImageableArea B5/B5:               "0 0 516  729"
+*ImageableArea B6/B6:               "0 0 363  516"
+*ImageableArea Postcard/Postcard:   "0 0 284  419"
+*ImageableArea EnvKaku0/Kaku 0:   "0 0 814 1083"
+*ImageableArea EnvKaku1/Kaku 1:   "0 0 765 1083"
+*ImageableArea EnvKaku2/Kaku 2:   "0 0 680  941"
+*ImageableArea EnvKaku3/Kaku 3:   "0 0 612  785"
+*ImageableArea EnvChou3/Naga 3:   "0 0 340  666"
+*ImageableArea EnvChou4/Naga 4:   "0 0 255  581"
+
+*DefaultPaperDimension: A4
+*PaperDimension Letter/Letter:       "612  792"
+*PaperDimension Legal/Legal:         "612 1008"
+*PaperDimension Tabloid/Tabloid:     "792 1224"
+*PaperDimension Foolscap/Foolscap:   "612  964"
+*PaperDimension Statement/Statement: "396  612"
+*PaperDimension RISOA3W/RISO A3W:     "896 1304"
+*PaperDimension A3/A3:               "842 1191"
+*PaperDimension A4/A4:               "595  842"
+*PaperDimension A5/A5:               "420  595"
+*PaperDimension B4/B4:               "729 1032"
+*PaperDimension B5/B5:               "516  729"
+*PaperDimension B6/B6:               "363  516"
+*PaperDimension Postcard/Postcard:   "284  419"
+*PaperDimension EnvKaku0/Kaku 0:   "814 1083"
+*PaperDimension EnvKaku1/Kaku 1:   "765 1083"
+*PaperDimension EnvKaku2/Kaku 2:   "680  941"
+*PaperDimension EnvKaku3/Kaku 3:   "612  785"
+*PaperDimension EnvChou3/Naga 3:   "340  666"
+*PaperDimension EnvChou4/Naga 4:   "255  581"
+
+*% --------------- Custom Page Sizes ---------------
+
+*NonUIOrderDependency: 220.0 DocumentSetup *CustomPageSize
+*CustomPageSize True: "
+    /SHOptions /ProcSet resourcestatus
+        {
+        pop pop userdict /SHPlugInSettings 2 copy known {get exec}{pop pop} ifelse
+        pop pop pop 0 3 1 roll
+        3 array astore
+        /CustomPageSize /SHOptions /ProcSet findresource /setSHOptions get exec
+        }
+        {
+        pop pop pop
+        2 array astore << /PageSize 3 -1 roll >> setpagedevice
+        }
+    ifelse"
+*End
+
+*% Minimum:  90 x 148 mm
+*% Maximum: 316 x 550 mm
+*ParamCustomPageSize Width: 1 points 255.11 895.75
+*ParamCustomPageSize Height: 2 points 419.52 1559.06
+*ParamCustomPageSize WidthOffset: 3 points 0 0
+*ParamCustomPageSize HeightOffset: 4 points 0 0
+*ParamCustomPageSize Orientation: 5 int 1 1
+*MaxMediaWidth: "895.75"
+*MaxMediaHeight: "1559.06"
+*LeadingEdge Short: ""
+*LeadingEdge Long: ""
+*DefaultLeadingEdge: Unknown
+*HWMargins: 0 0 0 0
+
+*VariablePaperSize: True
+
+*% --------------- Media Handling ---------------
+
+*LandscapeOrientation: Plus90
+
+*RequiresPageRegion All: True
+
+*OpenUI *SHOrientation/Orientaci<F3>n del papel: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHOrientation
+*DefaultSHOrientation: Port
+*SHOrientation Port/Vertical: "    mark {
+    (Port) /Orientation /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOrientation Land/Horizontal: "    mark {
+    (Land) /Orientation /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOrientation
+
+*OpenUI *SHReverseOrder/Orden inverso: Boolean
+*OrderDependency: 30.0 DocumentSetup *SHReverseOrder
+*DefaultSHReverseOrder: False
+*SHReverseOrder False/Desactivado: "    mark {
+    (False) /ReverseOrder /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHReverseOrder True/Activado: "    mark {
+    (True) /ReverseOrder /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHReverseOrder
+
+*OpenUI *Collate/Clasificar en el PC cliente: PickOne
+*OrderDependency: 40.0 DocumentSetup *Collate
+*DefaultCollate: True
+*Collate True/Clasificar: ""
+*Collate False/Agrupar: ""
+*CloseUI: *Collate
+
+*OpenUI *SHCollate/Orden: Boolean
+*OrderDependency: 30.0 DocumentSetup *SHCollate
+*DefaultSHCollate: True
+*SHCollate False/Agrupar: "    mark {
+    (False) /Collate /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCollate True/Clasificar: "    mark {
+    (True) /Collate /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHCollate
+
+*OpenUI *SHPagesFromTo/Imprimir p<E1>ginas: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHPagesFromTo
+*DefaultSHPagesFromTo: 1-0
+*SHPagesFromTo 1-0/Todas: "    mark {
+    (1-0) /PagesFromTo /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHPagesFromTo
+
+*OpenUI *InputSlot/Bandeja de alimentaci<F3>n: PickOne
+*OrderDependency: 200.0 DocumentSetup *InputSlot
+*DefaultInputSlot: Unknown
+*InputSlot Standard/Bandeja de salida: "    mark {
+    (Standard) /InputSlot /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*InputSlot Tray-1/Bandeja 1: "    mark {
+    (Tray-1) /InputSlot /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*InputSlot Tray-2/Bandeja 2: "    mark {
+    (Tray-2) /InputSlot /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *InputSlot
+
+*OpenUI *SHMediaType/Tipo de papel: PickOne
+*OrderDependency: 20.0 DocumentSetup *SHMediaType
+*DefaultSHMediaType: Auto
+*SHMediaType Auto/Cualquiera: "    mark {
+    (Auto) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType HC/HC: "    mark {
+    (HC) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType HCmatted/HC mate: "    mark {
+    (HCmatted) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType Standard/Standard: "    mark {
+    (Standard) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType PostcardIJ/Tarjeta postal IJ: "    mark {
+    (PostcardIJ) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType Postcard/Postcard: "    mark {
+    (Postcard) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType Standard1/Standard 1: "    mark {
+    (Standard1) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType HighQuality1/Gran calidad 1: "    mark {
+    (HighQuality1) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType HighQuality2/Gran calidad 2: "    mark {
+    (HighQuality2) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType Envelope/Sobre: "    mark {
+    (Envelope) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType Card/Cartulina: "    mark {
+    (Card) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMediaType CardIJ/Cartulina IJ: "    mark {
+    (CardIJ) /MediaType /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHMediaType
+
+*OpenUI *SHOutputTray/Bandeja de salida: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHOutputTray
+*DefaultSHOutputTray: Auto
+*SHOutputTray Auto/Auto: "    mark {
+    (Auto) /OutputTray /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOutputTray Stacker/Apilador: "    mark {
+    (Stacker) /OutputTray /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOutputTray
+
+*OpenUI *SHOutputFace/Salida cara impresa: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHOutputFace
+*DefaultSHOutputFace: Auto
+*SHOutputFace Auto/Auto: "    mark {
+    (Auto) /OutputFace /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOutputFace Faceup/Cara arriba: "    mark {
+    (Faceup) /OutputFace /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOutputFace Facedown/Cara abajo: "    mark {
+    (Facedown) /OutputFace /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOutputFace
+
+*OpenUI *SHJogMode/Desplaz. p<E1>ginas al salir: Boolean
+*OrderDependency: 30.0 DocumentSetup *SHJogMode
+*DefaultSHJogMode: False
+*SHJogMode False/Desactivado: "    mark {
+    (False) /JogMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHJogMode True/Activado: "    mark {
+    (True) /JogMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHJogMode
+
+*OpenUI *SHZoom/Zoom: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHZoom
+*DefaultSHZoom: 100
+*SHZoom 1/1%: "    mark {
+    (1) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 18/18%: "    mark {
+    (18) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 25/25%: "    mark {
+    (25) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 35/35%: "    mark {
+    (35) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 50/50%: "    mark {
+    (50) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 71/71%: "    mark {
+    (71) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 100/100%: "    mark {
+    (100) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 141/141%: "    mark {
+    (141) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 200/200%: "    mark {
+    (200) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 283/283%: "    mark {
+    (283) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 400/400%: "    mark {
+    (400) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 566/566%: "    mark {
+    (566) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 800/800%: "    mark {
+    (800) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZoom 1000/1000%: "    mark {
+    (1000) /Zoom /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHZoom
+
+*OpenUI *SHJobSepSheet/Hoja de separaci<F3>n de trabajos: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHJobSepSheet
+*DefaultSHJobSepSheet: Off
+*SHJobSepSheet Off/Desactivado: "    mark {
+    (Off) /JobSepSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHJobSepSheet BetweenJobs/Entre trabajos: "    mark {
+    (BetweenJobs) /JobSepSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHJobSepSheet BetweenSets/Entre juegos: "    mark {
+    (BetweenSets) /JobSepSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHJobSepSheet
+
+*OpenUI *SHTargetPaperSize/Tama<F1>o de salida: PickOne
+*OrderDependency: 215.0 DocumentSetup *SHTargetPaperSize
+*DefaultSHTargetPaperSize: Auto
+*SHTargetPaperSize Auto/Auto: "    mark {
+    (Auto) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize Letter/Letter: "    mark {
+    (Letter) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize Legal/Legal: "    mark {
+    (Legal) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize Tabloid/Tabloid: "    mark {
+    (Tabloid) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize Foolscap/Foolscap: "    mark {
+    (Foolscap) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize Statement/Statement: "    mark {
+    (Statement) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize RISOA3W/RISO A3W: "    mark {
+    (RISOA3W) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize A3/A3: "    mark {
+    (A3) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize A4/A4: "    mark {
+    (A4) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize A5/A5: "    mark {
+    (A5) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize B4/B4: "    mark {
+    (B4) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize B5/B5: "    mark {
+    (B5) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize B6/B6: "    mark {
+    (B6) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize Postcard/Postcard: "    mark {
+    (Postcard) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize EnvKaku0/Kaku 0: "    mark {
+    (EnvKaku0) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize EnvKaku1/Kaku 1: "    mark {
+    (EnvKaku1) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize EnvKaku2/Kaku 2: "    mark {
+    (EnvKaku2) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize EnvKaku3/Kaku 3: "    mark {
+    (EnvKaku3) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize EnvChou3/Naga 3: "    mark {
+    (EnvChou3) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHTargetPaperSize EnvChou4/Naga 4: "    mark {
+    (EnvChou4) /TargetPaperSize /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHTargetPaperSize
+
+*OpenUI *SHScaleToFit/Ajustar al papel: Boolean
+*OrderDependency: 210.0 DocumentSetup *SHScaleToFit
+*DefaultSHScaleToFit: True
+*SHScaleToFit False/Desactivado: "    mark {
+    (False) /ScaleToFit /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHScaleToFit True/Activado: "    mark {
+    (True) /ScaleToFit /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHScaleToFit
+
+*OpenUI *SHImposition/Imposici<F3>n: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHImposition
+*DefaultSHImposition: Simple
+*SHImposition Simple/Sencillo: "    mark {
+    (Simple) /Layout /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHImposition Booklet/Cuadernillo: "    mark {
+    (Booklet) /Layout /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHImposition Booklet2Fold/Cuadernillo plegado por la mitad: "    mark {
+    (Booklet2Fold) /Layout /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHImposition Nup/N-Up: "    mark {
+    (Nup) /Layout /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHImposition NupCopy/Copia N-Up: "    mark {
+    (NupCopy) /Layout /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHImposition
+
+*OpenUI *SHImpositionDirection/Direcci<F3>n de la imposici<F3>n: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHImpositionDirection
+*DefaultSHImpositionDirection: Forward
+*SHImpositionDirection Forward/Hacia adelante: "    mark {
+    (Forward) /ImpositionDirection /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHImpositionDirection Reverse/Hacia atr<E1>s: "    mark {
+    (Reverse) /ImpositionDirection /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHImpositionDirection
+
+*OpenUI *SHNupPageOrder/Orden de p<E1>ginas N-Up: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHNupPageOrder
+*DefaultSHNupPageOrder: Horizontal
+*SHNupPageOrder Horizontal/Horizontalmente: "    mark {
+    (Horizontal) /NupPageOrder /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHNupPageOrder Vertical/Verticalmente: "    mark {
+    (Vertical) /NupPageOrder /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHNupPageOrder
+
+*OpenUI *SHNupPagesPerSheet/P<E1>ginas por hoja N-Up: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHNupPagesPerSheet
+*DefaultSHNupPagesPerSheet: 2
+*SHNupPagesPerSheet 2/2: "    mark {
+    (2) /NupPagesPerSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHNupPagesPerSheet 4/4: "    mark {
+    (4) /NupPagesPerSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHNupPagesPerSheet 8/8: "    mark {
+    (8) /NupPagesPerSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHNupPagesPerSheet 16/16: "    mark {
+    (16) /NupPagesPerSheet /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHNupPagesPerSheet
+
+*OpenUI *SHBookletSplitting/Divisi<F3>n cuadernillo: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHBookletSplitting
+*DefaultSHBookletSplitting: Auto
+*SHBookletSplitting Off/Desactivado: "    mark {
+    (Off) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting Auto/Auto: "    mark {
+    (Auto) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 1/1: "    mark {
+    (1) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 2/2: "    mark {
+    (2) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 3/3: "    mark {
+    (3) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 4/4: "    mark {
+    (4) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 5/5: "    mark {
+    (5) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 6/6: "    mark {
+    (6) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 7/7: "    mark {
+    (7) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 8/8: "    mark {
+    (8) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 9/9: "    mark {
+    (9) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 10/10: "    mark {
+    (10) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 11/11: "    mark {
+    (11) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 12/12: "    mark {
+    (12) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 13/13: "    mark {
+    (13) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 14/14: "    mark {
+    (14) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletSplitting 15/15: "    mark {
+    (15) /BookletSplitting /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHBookletSplitting
+
+*OpenUI *SHDuplex/Duplex: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHDuplex
+*DefaultSHDuplex: Simplex
+*SHDuplex Simplex/Desactivado: "    mark {
+    (Simplex) /Duplex /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHDuplex LongEdge/Lado largo de la hoja: "    mark {
+    (LongEdge) /Duplex /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHDuplex ShortEdge/Lado corto de la hoja: "    mark {
+    (ShortEdge) /Duplex /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHDuplex
+
+*OpenUI *SHRotate180/Rotar 180 grados: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHRotate180
+*DefaultSHRotate180: False
+*SHRotate180 False/Desactivado: "    mark {
+    (False) /Rotate180 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRotate180 True/Activado: "    mark {
+    (True) /Rotate180 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHRotate180
+
+*OpenUI *SHStapleMode/Modo de Grapado: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHStapleMode
+*DefaultSHStapleMode: NonStaple
+*SHStapleMode NonStaple/Desactivado: "    mark {
+    (NonStaple) /StapleMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHStapleMode 2Staples/2: "    mark {
+    (2Staples) /StapleMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHStapleMode 1StapleLeft/1 izquierda: "    mark {
+    (1StapleLeft) /StapleMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHStapleMode 1StapleRight/1 derecha: "    mark {
+    (1StapleRight) /StapleMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHStapleMode
+
+*OpenUI *SHPunchMode/Modo de perforaci<F3>n: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHPunchMode
+*DefaultSHPunchMode: NonPunch
+*SHPunchMode NonPunch/Desactivado: "    mark {
+    (NonPunch) /PunchMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPunchMode 2Holes/2 orificios: "    mark {
+    (2Holes) /PunchMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPunchMode 3-4Holes/3/4 orificios: "    mark {
+    (3-4Holes) /PunchMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHPunchMode
+
+*OpenUI *SHFoldMode/Modo de plegado: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHFoldMode
+*DefaultSHFoldMode: NonFold
+*SHFoldMode NonFold/Sin plegado: "    mark {
+    (NonFold) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldMode Half/Plegado por la mitad m<FA>ltiple (Multi Half): "    mark {
+    (Half) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldMode HalfStaple/Plegar y grapar (encuadernar): "    mark {
+    (HalfStaple) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldMode 3Outer/Plegado en zigzag: "    mark {
+    (3Outer) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldMode 3Inner/Pleagado en 3: "    mark {
+    (3Inner) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldMode Z-Fold/Plegado en Z: "    mark {
+    (Z-Fold) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldMode 2Fold/Plegado por la mitad (Single Half): "    mark {
+    (2Fold) /FoldMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFoldMode
+
+*OpenUI *SHFoldInOut/Direcci<F3>n de plegado: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHFoldInOut
+*DefaultSHFoldInOut: Inside
+*SHFoldInOut Inside/hacia adentro: "    mark {
+    (Inside) /FoldInOut /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFoldInOut Outside/hacia fuera: "    mark {
+    (Outside) /FoldInOut /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFoldInOut
+
+*OpenUI *SHZFoldMixed/Detalles de plegado en Z<3A> tama<F1>os de p<E1>gina mixtos: Boolean
+*OrderDependency: 30.0 DocumentSetup *SHZFoldMixed
+*DefaultSHZFoldMixed: False
+*SHZFoldMixed False/Desactivado: "    mark {
+    (False) /ZFoldMixed /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZFoldMixed True/Activado: "    mark {
+    (True) /ZFoldMixed /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHZFoldMixed
+
+*OpenUI *SHZFoldRotateBig/Detalles de plegado en Z<3A> girar p<E1>ginas grandes: Boolean
+*OrderDependency: 30.0 DocumentSetup *SHZFoldRotateBig
+*DefaultSHZFoldRotateBig: False
+*SHZFoldRotateBig False/Desactivado: "    mark {
+    (False) /ZFoldRotateBig /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHZFoldRotateBig True/Activado: "    mark {
+    (True) /ZFoldRotateBig /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHZFoldRotateBig
+
+*OpenUI *SHGutterDistance/Distancia entre m<E1>rgenes: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHGutterDistance
+*DefaultSHGutterDistance: 0
+*SHGutterDistance     0/0:  "    mark {
+    (0) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     1000/1:  "    mark {
+    (1000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     2000/2:  "    mark {
+    (2000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     3000/3:  "    mark {
+    (3000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     4000/4:  "    mark {
+    (4000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     5000/5:  "    mark {
+    (5000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     6000/6:  "    mark {
+    (6000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     7000/7:  "    mark {
+    (7000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     8000/8:  "    mark {
+    (8000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance     9000/9:  "    mark {
+    (9000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance   10000/10:  "    mark {
+    (10000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance   20000/20:  "    mark {
+    (20000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance   30000/30:  "    mark {
+    (30000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance   40000/40:  "    mark {
+    (40000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterDistance   50000/50:  "    mark {
+    (50000) /GutterDistance /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHGutterDistance
+
+*OpenUI *SHGutterAutoReducing/Reducci<F3>n tama<F1>o de p<E1>gina autom<E1>tica: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHGutterAutoReducing
+*DefaultSHGutterAutoReducing: False
+*SHGutterAutoReducing False/Desactivado: "    mark {
+    (False) /GutterAutoReducing /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGutterAutoReducing True/Activado: "    mark {
+    (True) /GutterAutoReducing /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHGutterAutoReducing
+
+*OpenUI *SHFinishSide/Lado para encuadernaci<F3>n: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHFinishSide
+*DefaultSHFinishSide: Left
+*SHFinishSide Left/Izquierda: "    mark {
+    (Left) /FinishSide /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFinishSide Top/Arriba: "    mark {
+    (Top) /FinishSide /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFinishSide Right/Derecha: "    mark {
+    (Right) /FinishSide /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFinishSide
+
+*OpenUI *SHFrontCover/Cubierta frontal: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHFrontCover
+*DefaultSHFrontCover: Off
+*SHFrontCover Off/Desactivado: "    mark {
+    (Off) /FrontCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFrontCover Cover/Desde alim. de cubiertas: "    mark {
+    (Cover) /FrontCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFrontCover Interposer/Bandeja de interposici<F3>n: "    mark {
+    (Interposer) /FrontCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFrontCover
+
+*OpenUI *SHBackCover/Cubierta posterior: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHBackCover
+*DefaultSHBackCover: Off
+*SHBackCover Off/Desactivado: "    mark {
+    (Off) /BackCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBackCover Cover/Desde alim. de cubiertas: "    mark {
+    (Cover) /BackCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBackCover Interposer/Bandeja de interposici<F3>n: "    mark {
+    (Interposer) /BackCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHBackCover
+
+*OpenUI *SHBookletCover/Cubierta del cuadernillo: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHBookletCover
+*DefaultSHBookletCover: Off
+*SHBookletCover Off/Desactivado: "    mark {
+    (Off) /BookletCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletCover OnlyCover/Imprimir s<F3>lo la cubierta: "    mark {
+    (OnlyCover) /BookletCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletCover ExceptCover/Imprimir excepto cubierta: "    mark {
+    (ExceptCover) /BookletCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBookletCover ArchiveExceptCover/Esperar despu<E9>s de imprimir cubierta: "    mark {
+    (ArchiveExceptCover) /BookletCover /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHBookletCover
+
+*OpenUI *SHHeaderPage/P<E1>gina inicial: Boolean
+*OrderDependency: 30.0 DocumentSetup *SHHeaderPage
+*DefaultSHHeaderPage: False
+*SHHeaderPage False/Desactivado: "    mark {
+    (False) /HeaderPage /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHeaderPage True/Activado: "    mark {
+    (True) /HeaderPage /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHHeaderPage
+
+*OpenUI *SHOutputMode/Modo color de salida: PickOne
+*OrderDependency: 30.0 DocumentSetup *SHOutputMode
+*DefaultSHOutputMode: Color
+*SHOutputMode Color/Color: "    mark {
+    (Color) /OutputMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOutputMode Monochrome/Monocromo: "    mark {
+    (Monochrome) /OutputMode /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOutputMode
+
+*OpenUI *SHScreening/Trama: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHScreening
+*DefaultSHScreening: ErrorDiff
+*SHScreening Raster/Punto reticular: "    mark {
+    (Raster) /Screening /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHScreening ErrorDiff/Estoc<E1>stica: "    mark {
+    (ErrorDiff) /Screening /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHScreening
+
+*ResScreenFreq 300x300dpi: "71"
+*ResScreenFreq 300x600dpi: "100"
+*ResScreenAngle 300x300dpi: "45"
+*ResScreenAngle 300x600dpi: "45"
+
+*OpenUI *SHScreenFreq/Anchura de la trama: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHScreenFreq
+*DefaultSHScreenFreq: 71
+*SHScreenFreq 43/43: "    mark {
+    (43) /ScreenFreq /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHScreenFreq 71/71: "    mark {
+    (71) /ScreenFreq /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHScreenFreq 100/100: "    mark {
+    (100) /ScreenFreq /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHScreenFreq
+
+*OpenUI *SHLineSmoothing/Suavizar l<ED>neas: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHLineSmoothing
+*DefaultSHLineSmoothing: Off
+*SHLineSmoothing Off/Desactivado: "    mark {
+    (Off) /LineSmoothing /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHLineSmoothing Low/Medio: "    mark {
+    (Low) /LineSmoothing /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHLineSmoothing High/Fuerte: "    mark {
+    (High) /LineSmoothing /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHLineSmoothing
+
+*OpenUI *SHGCDensity/Densidad: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHGCDensity
+*DefaultSHGCDensity: Standard
+*SHGCDensity Lightest/Claro: "    mark {
+    (Lightest) /GCDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCDensity Light/Semiclaro: "    mark {
+    (Light) /GCDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCDensity Standard/Est<E1>ndar: "    mark {
+    (Standard) /GCDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCDensity Dark/Semioscuro: "    mark {
+    (Dark) /GCDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCDensity Darkest/Oscuro: "    mark {
+    (Darkest) /GCDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHGCDensity
+
+*OpenUI *SHGCContrast/Contraste: PickOne
+*OrderDependency: 40.0 DocumentSetup *SHGCContrast
+*DefaultSHGCContrast: Standard
+*SHGCContrast Lowest/Muy d<E9>bil: "    mark {
+    (Lowest) /GCContrast /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCContrast Low/D<E9>bil: "    mark {
+    (Low) /GCContrast /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCContrast Standard/Est<E1>ndar: "    mark {
+    (Standard) /GCContrast /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCContrast High/Fuerte: "    mark {
+    (High) /GCContrast /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHGCContrast Highest/Muy fuerte: "    mark {
+    (Highest) /GCContrast /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHGCContrast
+
+*OpenUI *SHPrintDensity/Densidad de impresi<F3>n: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHPrintDensity
+*DefaultSHPrintDensity: Level3
+*SHPrintDensity Level1/Nivel 1: "    mark {
+    (Level1) /PrintDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintDensity Level2/Nivel 2: "    mark {
+    (Level2) /PrintDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintDensity Level3/Nivel 3: "    mark {
+    (Level3) /PrintDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintDensity Level4/Nivel 4: "    mark {
+    (Level4) /PrintDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintDensity Level5/Nivel 5: "    mark {
+    (Level5) /PrintDensity /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHPrintDensity
+
+*OpenUI *SHMaxDrops/M<E1>ximo gotas de tinta: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHMaxDrops
+*DefaultSHMaxDrops: Auto
+*SHMaxDrops Auto/Auto: "    mark {
+    (Auto) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 1Drop/1: "    mark {
+    (1Drop) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 2Drops/2: "    mark {
+    (2Drops) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 3Drops/3: "    mark {
+    (3Drops) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 4Drops/4: "    mark {
+    (4Drops) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 5Drops/5: "    mark {
+    (5Drops) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 6Drops/6: "    mark {
+    (6Drops) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMaxDrops 7Drops/7: "    mark {
+    (7Drops) /MaxDrops /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHMaxDrops
+
+*OpenUI *SHRemapDeviceRGB/RGB a CIE: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHRemapDeviceRGB
+*DefaultSHRemapDeviceRGB: True
+*SHRemapDeviceRGB False/Desactivado: "    mark {
+    (False) /RemapDeviceRGB /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRemapDeviceRGB True/Activado: "    mark {
+    (True) /RemapDeviceRGB /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHRemapDeviceRGB
+
+*OpenUI *SHCyanGamma/Gamma para Cyan: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHCyanGamma
+*DefaultSHCyanGamma: 100
+*SHCyanGamma     1/0.01:  "    mark {
+    (1) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     10/0.1:  "    mark {
+    (10) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     20/0.2:  "    mark {
+    (20) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     30/0.3:  "    mark {
+    (30) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     40/0.4:  "    mark {
+    (40) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     50/0.5:  "    mark {
+    (50) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     60/0.6:  "    mark {
+    (60) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     70/0.7:  "    mark {
+    (70) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     80/0.8:  "    mark {
+    (80) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     90/0.9:  "    mark {
+    (90) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     100/1.0:  "    mark {
+    (100) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     110/1.1:  "    mark {
+    (110) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma    130/1.3:  "    mark {
+    (130) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     150/1.5:  "    mark {
+    (150) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     170/1.7:  "    mark {
+    (170) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     190/1.9:  "    mark {
+    (190) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     210/2.1:  "    mark {
+    (210) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     240/2.4:  "    mark {
+    (240) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     270/2.7:  "    mark {
+    (270) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCyanGamma     300/3.0:  "    mark {
+    (300) /CyanGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHCyanGamma
+
+*OpenUI *SHMagentaGamma/Gamma para Magenta: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHMagentaGamma
+*DefaultSHMagentaGamma: 100
+*SHMagentaGamma     1/0.01:  "    mark {
+    (1) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     10/0.1:  "    mark {
+    (10) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     20/0.2:  "    mark {
+    (20) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     30/0.3:  "    mark {
+    (30) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     40/0.4:  "    mark {
+    (40) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     50/0.5:  "    mark {
+    (50) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     60/0.6:  "    mark {
+    (60) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     70/0.7:  "    mark {
+    (70) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     80/0.8:  "    mark {
+    (80) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     90/0.9:  "    mark {
+    (90) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     100/1.0:  "    mark {
+    (100) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     110/1.1:  "    mark {
+    (110) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma    130/1.3:  "    mark {
+    (130) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     150/1.5:  "    mark {
+    (150) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     170/1.7:  "    mark {
+    (170) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     190/1.9:  "    mark {
+    (190) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     210/2.1:  "    mark {
+    (210) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     240/2.4:  "    mark {
+    (240) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     270/2.7:  "    mark {
+    (270) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHMagentaGamma     300/3.0:  "    mark {
+    (300) /MagentaGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHMagentaGamma
+
+*OpenUI *SHYellowGamma/Gamma para Amarillo: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHYellowGamma
+*DefaultSHYellowGamma: 100
+*SHYellowGamma     1/0.01:  "    mark {
+    (1) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     10/0.1:  "    mark {
+    (10) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     20/0.2:  "    mark {
+    (20) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     30/0.3:  "    mark {
+    (30) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     40/0.4:  "    mark {
+    (40) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     50/0.5:  "    mark {
+    (50) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     60/0.6:  "    mark {
+    (60) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     70/0.7:  "    mark {
+    (70) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     80/0.8:  "    mark {
+    (80) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     90/0.9:  "    mark {
+    (90) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     100/1.0:  "    mark {
+    (100) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     110/1.1:  "    mark {
+    (110) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma    130/1.3:  "    mark {
+    (130) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     150/1.5:  "    mark {
+    (150) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     170/1.7:  "    mark {
+    (170) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     190/1.9:  "    mark {
+    (190) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     210/2.1:  "    mark {
+    (210) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     240/2.4:  "    mark {
+    (240) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     270/2.7:  "    mark {
+    (270) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHYellowGamma     300/3.0:  "    mark {
+    (300) /YellowGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHYellowGamma
+
+*OpenUI *SHBlackGamma/Gamma para Negro: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHBlackGamma
+*DefaultSHBlackGamma: 100
+*SHBlackGamma     1/0.01:  "    mark {
+    (1) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     10/0.1:  "    mark {
+    (10) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     20/0.2:  "    mark {
+    (20) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     30/0.3:  "    mark {
+    (30) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     40/0.4:  "    mark {
+    (40) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     50/0.5:  "    mark {
+    (50) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     60/0.6:  "    mark {
+    (60) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     70/0.7:  "    mark {
+    (70) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     80/0.8:  "    mark {
+    (80) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     90/0.9:  "    mark {
+    (90) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     100/1.0:  "    mark {
+    (100) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     110/1.1:  "    mark {
+    (110) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma    130/1.3:  "    mark {
+    (130) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     150/1.5:  "    mark {
+    (150) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     170/1.7:  "    mark {
+    (170) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     190/1.9:  "    mark {
+    (190) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     210/2.1:  "    mark {
+    (210) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     240/2.4:  "    mark {
+    (240) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     270/2.7:  "    mark {
+    (270) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHBlackGamma     300/3.0:  "    mark {
+    (300) /BlackGamma /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHBlackGamma
+
+*OpenUI *SHRemapDeviceCMYK/CMYK a CIE: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHRemapDeviceCMYK
+*DefaultSHRemapDeviceCMYK: On
+*SHRemapDeviceCMYK Off/Ning<FA>n perfil: "    mark {
+    (Off) /RemapDeviceCMYK /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRemapDeviceCMYK On/CMYK a CIE: "    mark {
+    (On) /RemapDeviceCMYK /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRemapDeviceCMYK DeviceLink/DeviceLink (automatico): "    mark {
+    (DeviceLink) /RemapDeviceCMYK /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHRemapDeviceCMYK
+
+*OpenUI *SHSeparateProfileTG/Perfil de texto especial: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHSeparateProfileTG
+*DefaultSHSeparateProfileTG: False
+*SHSeparateProfileTG False/Desactivado: "    mark {
+    (False) /SeparateProfileTG /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHSeparateProfileTG True/Activado: "    mark {
+    (True) /SeparateProfileTG /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHSeparateProfileTG
+
+*OpenUI *SHRenderingIntent/Intento de Renderizaci<F3>n: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHRenderingIntent
+*DefaultSHRenderingIntent: Perceptual
+*SHRenderingIntent RelativeColorimetric/Colorim<E9>trico Relativo: "    mark {
+    (RelativeColorimetric) /RenderingIntent /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRenderingIntent AbsoluteColorimetric/Colorim<E9>trico absoluto: "    mark {
+    (AbsoluteColorimetric) /RenderingIntent /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRenderingIntent Perceptual/Perceptivo: "    mark {
+    (Perceptual) /RenderingIntent /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRenderingIntent Saturation/Saturaci<F3>n: "    mark {
+    (Saturation) /RenderingIntent /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHRenderingIntent
+
+*OpenUI *SHFormPrintPattern/Patr<F3>n de impresi<F3>n: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHFormPrintPattern
+*DefaultSHFormPrintPattern: Off
+*SHFormPrintPattern Off/Desactivado: "    mark {
+    (Off) /FormPrintPattern /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormPrintPattern Single/Superponer a todas las p<E1>ginas: "    mark {
+    (Single) /FormPrintPattern /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormPrintPattern DoubleLongEdge/Superponer alternando (Lado largo de la hoja): "    mark {
+    (DoubleLongEdge) /FormPrintPattern /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormPrintPattern SingleDoubleLongEdge/Superp. Altern. y a cada p<E1>gina (Lado largo): "    mark {
+    (SingleDoubleLongEdge) /FormPrintPattern /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormPrintPattern DoubleShortEdge/Superponer alternando (Lado corto de la hoja): "    mark {
+    (DoubleShortEdge) /FormPrintPattern /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormPrintPattern SingleDoubleShortEdge/Superp. Altern. y a cada p<E1>gina (Lado corto): "    mark {
+    (SingleDoubleShortEdge) /FormPrintPattern /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFormPrintPattern
+
+*OpenUI *SHFormDataPrintFace/Cara para impresi<F3>n: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHFormDataPrintFace
+*DefaultSHFormDataPrintFace: Back
+*SHFormDataPrintFace Front/Cara anterior: "    mark {
+    (Front) /FormDataPrintFace /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormDataPrintFace Back/Cara posterior: "    mark {
+    (Back) /FormDataPrintFace /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFormDataPrintFace
+
+*OpenUI *SHFormFrontBackSep/Cara anterior/ posterior por separado: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHFormFrontBackSep
+*DefaultSHFormFrontBackSep: False
+*SHFormFrontBackSep False/Desactivado: "    mark {
+    (False) /FormFrontBackSep /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHFormFrontBackSep True/Activado: "    mark {
+    (True) /FormFrontBackSep /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHFormFrontBackSep
+
+*OpenUI *SHForm1/Formulario 1 (todas las p<E1>ginas / cara anterior): PickOne
+*OrderDependency: 100.0 DocumentSetup *SHForm1
+*DefaultSHForm1: NoForm
+*SHForm1 NoForm/Desactivado: "    mark {
+    (NoForm) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom1/Formulario personalizado 1: "    mark {
+    (Custom1) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom2/Formulario personalizado 2: "    mark {
+    (Custom2) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom3/Formulario personalizado 3: "    mark {
+    (Custom3) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom4/Formulario personalizado 4: "    mark {
+    (Custom4) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom5/Formulario personalizado 5: "    mark {
+    (Custom5) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom6/Formulario personalizado 6: "    mark {
+    (Custom6) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom7/Formulario personalizado 7: "    mark {
+    (Custom7) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom8/Formulario personalizado 8: "    mark {
+    (Custom8) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom9/Formulario personalizado 9: "    mark {
+    (Custom9) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm1 Custom10/Formulario personalizado 10: "    mark {
+    (Custom10) /Form1 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHForm1
+
+*OpenUI *SHForm2/Formulario 2 (cara posterior): PickOne
+*OrderDependency: 100.0 DocumentSetup *SHForm2
+*DefaultSHForm2: NoForm
+*SHForm2 NoForm/Desactivado: "    mark {
+    (NoForm) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom1/Formulario personalizado 1: "    mark {
+    (Custom1) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom2/Formulario personalizado 2: "    mark {
+    (Custom2) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom3/Formulario personalizado 3: "    mark {
+    (Custom3) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom4/Formulario personalizado 4: "    mark {
+    (Custom4) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom5/Formulario personalizado 5: "    mark {
+    (Custom5) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom6/Formulario personalizado 6: "    mark {
+    (Custom6) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom7/Formulario personalizado 7: "    mark {
+    (Custom7) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom8/Formulario personalizado 8: "    mark {
+    (Custom8) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom9/Formulario personalizado 9: "    mark {
+    (Custom9) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHForm2 Custom10/Formulario personalizado 10: "    mark {
+    (Custom10) /Form2 /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHForm2
+
+*OpenUI *SHPrepend/Anteponer: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHPrepend
+*DefaultSHPrepend: NoForm
+*SHPrepend NoForm/Ning<FA>n formulario: "    mark {
+    (NoForm) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom1/Formulario personalizado 1: "    mark {
+    (Custom1) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom2/Formulario personalizado 2: "    mark {
+    (Custom2) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom3/Formulario personalizado 3: "    mark {
+    (Custom3) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom4/Formulario personalizado 4: "    mark {
+    (Custom4) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom5/Formulario personalizado 5: "    mark {
+    (Custom5) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom6/Formulario personalizado 6: "    mark {
+    (Custom6) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom7/Formulario personalizado 7: "    mark {
+    (Custom7) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom8/Formulario personalizado 8: "    mark {
+    (Custom8) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom9/Formulario personalizado 9: "    mark {
+    (Custom9) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrepend Custom10/Formulario personalizado 10: "    mark {
+    (Custom10) /PrependJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHPrepend
+
+*OpenUI *SHAppend/A<F1>adir: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHAppend
+*DefaultSHAppend: NoForm
+*SHAppend NoForm/Desactivado: "    mark {
+    (NoForm) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom1/Formulario personalizado 1: "    mark {
+    (Custom1) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom2/Formulario personalizado 2: "    mark {
+    (Custom2) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom3/Formulario personalizado 3: "    mark {
+    (Custom3) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom4/Formulario personalizado 4: "    mark {
+    (Custom4) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom5/Formulario personalizado 5: "    mark {
+    (Custom5) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom6/Formulario personalizado 6: "    mark {
+    (Custom6) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom7/Formulario personalizado 7: "    mark {
+    (Custom7) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom8/Formulario personalizado 8: "    mark {
+    (Custom8) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom9/Formulario personalizado 9: "    mark {
+    (Custom9) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHAppend Custom10/Formulario personalizado 10: "    mark {
+    (Custom10) /AppendJob /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHAppend
+
+*OpenUI *SHHorizontalShift/Movimiento horizontal: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHHorizontalShift
+*DefaultSHHorizontalShift: 0
+*SHHorizontalShift -250000/ -250: "    mark {
+    (-250000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -225000/ -225: "    mark {
+    (-225000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -200000/ -200: "    mark {
+    (-200000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -180000/ -180: "    mark {
+    (-180000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -160000/ -160: "    mark {
+    (-160000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -140000/ -140: "    mark {
+    (-140000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -120000/ -120: "    mark {
+    (-120000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift -100000/ -100: "    mark {
+    (-100000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -90000/ -90: "    mark {
+    (-90000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -80000/ -80: "    mark {
+    (-80000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -70000/ -70: "    mark {
+    (-70000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -60000/ -60: "    mark {
+    (-60000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -50000/ -50: "    mark {
+    (-50000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -40000/ -40: "    mark {
+    (-40000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -30000/ -30: "    mark {
+    (-30000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -20000/ -20: "    mark {
+    (-20000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  -10000/ -10: "    mark {
+    (-10000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -9000/ -9: "    mark {
+    (-9000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -8000/ -8: "    mark {
+    (-8000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -7000/ -7: "    mark {
+    (-7000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -6000/ -6: "    mark {
+    (-6000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -5000/ -5: "    mark {
+    (-5000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -4000/ -4: "    mark {
+    (-4000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -3000/ -3: "    mark {
+    (-3000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -2000/ -2: "    mark {
+    (-2000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   -1000/ -1: "    mark {
+    (-1000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    -750/ -0.75: "    mark {
+    (-750) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    -500/ -0.5: "    mark {
+    (-500) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    -250/ -0.25: "    mark {
+    (-250) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift       0/ 0: "    mark {
+    (0) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift     250/ 0.25: "    mark {
+    (250) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift     500/ 0.5: "    mark {
+    (500) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift     750/ 0.75: "    mark {
+    (750) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    1000/ 1: "    mark {
+    (1000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    2000/ 2: "    mark {
+    (2000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    3000/ 3: "    mark {
+    (3000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    4000/ 4: "    mark {
+    (4000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    5000/ 5: "    mark {
+    (5000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    6000/ 6: "    mark {
+    (6000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    7000/ 7: "    mark {
+    (7000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    8000/ 8: "    mark {
+    (8000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift    9000/ 9: "    mark {
+    (9000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   10000/ 10: "    mark {
+    (10000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   20000/ 20: "    mark {
+    (20000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   30000/ 30: "    mark {
+    (30000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   40000/ 40: "    mark {
+    (40000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   50000/ 50: "    mark {
+    (50000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   60000/ 60: "    mark {
+    (60000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   70000/ 70: "    mark {
+    (70000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   80000/ 80: "    mark {
+    (80000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift   90000/ 90: "    mark {
+    (90000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  100000/ 100: "    mark {
+    (100000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  120000/ 120: "    mark {
+    (120000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  140000/ 140: "    mark {
+    (140000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  160000/ 160: "    mark {
+    (160000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  180000/ 180: "    mark {
+    (180000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  200000/ 200: "    mark {
+    (200000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  225000/ 225: "    mark {
+    (225000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHorizontalShift  250000/ 250: "    mark {
+    (250000) /HorizontalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHHorizontalShift
+
+*OpenUI *SHVerticalShift/Movimeiento vertical: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHVerticalShift
+*DefaultSHVerticalShift: 0
+*SHVerticalShift -250000/ -250: "    mark {
+    (-250000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -225000/ -225: "    mark {
+    (-225000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -200000/ -200: "    mark {
+    (-200000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -180000/ -180: "    mark {
+    (-180000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -160000/ -160: "    mark {
+    (-160000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -140000/ -140: "    mark {
+    (-140000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -120000/ -120: "    mark {
+    (-120000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift -100000/ -100: "    mark {
+    (-100000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -90000/ -90: "    mark {
+    (-90000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -80000/ -80: "    mark {
+    (-80000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -70000/ -70: "    mark {
+    (-70000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -60000/ -60: "    mark {
+    (-60000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -50000/ -50: "    mark {
+    (-50000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -40000/ -40: "    mark {
+    (-40000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -30000/ -30: "    mark {
+    (-30000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -20000/ -20: "    mark {
+    (-20000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  -10000/ -10: "    mark {
+    (-10000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -9000/ -9: "    mark {
+    (-9000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -8000/ -8: "    mark {
+    (-8000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -7000/ -7: "    mark {
+    (-7000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -6000/ -6: "    mark {
+    (-6000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -5000/ -5: "    mark {
+    (-5000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -4000/ -4: "    mark {
+    (-4000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -3000/ -3: "    mark {
+    (-3000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -2000/ -2: "    mark {
+    (-2000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   -1000/ -1: "    mark {
+    (-1000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    -750/ -0.75: "    mark {
+    (-750) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    -500/ -0.5: "    mark {
+    (-500) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    -250/ -0.25: "    mark {
+    (-250) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift       0/ 0: "    mark {
+    (0) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift     250/ 0.25: "    mark {
+    (250) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift     500/ 0.5: "    mark {
+    (500) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift     750/ 0.75: "    mark {
+    (750) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    1000/ 1: "    mark {
+    (1000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    2000/ 2: "    mark {
+    (2000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    3000/ 3: "    mark {
+    (3000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    4000/ 4: "    mark {
+    (4000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    5000/ 5: "    mark {
+    (5000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    6000/ 6: "    mark {
+    (6000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    7000/ 7: "    mark {
+    (7000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    8000/ 8: "    mark {
+    (8000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift    9000/ 9: "    mark {
+    (9000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   10000/ 10: "    mark {
+    (10000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   20000/ 20: "    mark {
+    (20000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   30000/ 30: "    mark {
+    (30000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   40000/ 40: "    mark {
+    (40000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   50000/ 50: "    mark {
+    (50000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   60000/ 60: "    mark {
+    (60000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   70000/ 70: "    mark {
+    (70000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   80000/ 80: "    mark {
+    (80000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift   90000/ 90: "    mark {
+    (90000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  100000/ 100: "    mark {
+    (100000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  120000/ 120: "    mark {
+    (120000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  140000/ 140: "    mark {
+    (140000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  160000/ 160: "    mark {
+    (160000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  180000/ 180: "    mark {
+    (180000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  200000/ 200: "    mark {
+    (200000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  225000/ 225: "    mark {
+    (225000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVerticalShift  250000/ 250: "    mark {
+    (250000) /VerticalShift /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHVerticalShift
+
+*OpenUI *SHShiftFrontBack/Desplazar por separado caras anterior / posterior: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHShiftFrontBack
+*DefaultSHShiftFrontBack: False
+*SHShiftFrontBack False/Desactivado: "    mark {
+    (False) /ShiftFrontBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHShiftFrontBack True/Activado: "    mark {
+    (True) /ShiftFrontBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHShiftFrontBack
+
+*OpenUI *SHHoriShiftBack/Movimiento horizontal (posterior): PickOne
+*OrderDependency: 100.0 DocumentSetup *SHHoriShiftBack
+*DefaultSHHoriShiftBack: 0
+*SHHoriShiftBack -250000/ -250: "    mark {
+    (-250000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -225000/ -225: "    mark {
+    (-225000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -200000/ -200: "    mark {
+    (-200000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -180000/ -180: "    mark {
+    (-180000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -160000/ -160: "    mark {
+    (-160000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -140000/ -140: "    mark {
+    (-140000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -120000/ -120: "    mark {
+    (-120000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack -100000/ -100: "    mark {
+    (-100000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -90000/ -90: "    mark {
+    (-90000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -80000/ -80: "    mark {
+    (-80000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -70000/ -70: "    mark {
+    (-70000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -60000/ -60: "    mark {
+    (-60000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -50000/ -50: "    mark {
+    (-50000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -40000/ -40: "    mark {
+    (-40000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -30000/ -30: "    mark {
+    (-30000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -20000/ -20: "    mark {
+    (-20000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  -10000/ -10: "    mark {
+    (-10000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -9000/ -9: "    mark {
+    (-9000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -8000/ -8: "    mark {
+    (-8000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -7000/ -7: "    mark {
+    (-7000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -6000/ -6: "    mark {
+    (-6000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -5000/ -5: "    mark {
+    (-5000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -4000/ -4: "    mark {
+    (-4000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -3000/ -3: "    mark {
+    (-3000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -2000/ -2: "    mark {
+    (-2000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   -1000/ -1: "    mark {
+    (-1000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    -750/ -0.75: "    mark {
+    (-750) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    -500/ -0.5: "    mark {
+    (-500) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    -250/ -0.25: "    mark {
+    (-250) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack       0/ 0: "    mark {
+    (0) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack     250/ 0.25: "    mark {
+    (250) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack     500/ 0.5: "    mark {
+    (500) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack     750/ 0.75: "    mark {
+    (750) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    1000/ 1: "    mark {
+    (1000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    2000/ 2: "    mark {
+    (2000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    3000/ 3: "    mark {
+    (3000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    4000/ 4: "    mark {
+    (4000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    5000/ 5: "    mark {
+    (5000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    6000/ 6: "    mark {
+    (6000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    7000/ 7: "    mark {
+    (7000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    8000/ 8: "    mark {
+    (8000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack    9000/ 9: "    mark {
+    (9000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   10000/ 10: "    mark {
+    (10000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   20000/ 20: "    mark {
+    (20000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   30000/ 30: "    mark {
+    (30000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   40000/ 40: "    mark {
+    (40000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   50000/ 50: "    mark {
+    (50000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   60000/ 60: "    mark {
+    (60000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   70000/ 70: "    mark {
+    (70000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   80000/ 80: "    mark {
+    (80000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack   90000/ 90: "    mark {
+    (90000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  100000/ 100: "    mark {
+    (100000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  120000/ 120: "    mark {
+    (120000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  140000/ 140: "    mark {
+    (140000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  160000/ 160: "    mark {
+    (160000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  180000/ 180: "    mark {
+    (180000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  200000/ 200: "    mark {
+    (200000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  225000/ 225: "    mark {
+    (225000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHHoriShiftBack  250000/ 250: "    mark {
+    (250000) /HoriShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHHoriShiftBack
+
+*OpenUI *SHVertiShiftBack/Movimeiento vertical (posterior): PickOne
+*OrderDependency: 100.0 DocumentSetup *SHVertiShiftBack
+*DefaultSHVertiShiftBack: 0
+*SHVertiShiftBack -250000/ -250: "    mark {
+    (-250000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -225000/ -225: "    mark {
+    (-225000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -200000/ -200: "    mark {
+    (-200000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -180000/ -180: "    mark {
+    (-180000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -160000/ -160: "    mark {
+    (-160000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -140000/ -140: "    mark {
+    (-140000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -120000/ -120: "    mark {
+    (-120000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack -100000/ -100: "    mark {
+    (-100000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -90000/ -90: "    mark {
+    (-90000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -80000/ -80: "    mark {
+    (-80000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -70000/ -70: "    mark {
+    (-70000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -60000/ -60: "    mark {
+    (-60000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -50000/ -50: "    mark {
+    (-50000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -40000/ -40: "    mark {
+    (-40000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -30000/ -30: "    mark {
+    (-30000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -20000/ -20: "    mark {
+    (-20000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  -10000/ -10: "    mark {
+    (-10000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -9000/ -9: "    mark {
+    (-9000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -8000/ -8: "    mark {
+    (-8000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -7000/ -7: "    mark {
+    (-7000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -6000/ -6: "    mark {
+    (-6000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -5000/ -5: "    mark {
+    (-5000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -4000/ -4: "    mark {
+    (-4000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -3000/ -3: "    mark {
+    (-3000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -2000/ -2: "    mark {
+    (-2000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   -1000/ -1: "    mark {
+    (-1000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    -750/ -0.75: "    mark {
+    (-750) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    -500/ -0.5: "    mark {
+    (-500) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    -250/ -0.25: "    mark {
+    (-250) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack       0/ 0: "    mark {
+    (0) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack     250/ 0.25: "    mark {
+    (250) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack     500/ 0.5: "    mark {
+    (500) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack     750/ 0.75: "    mark {
+    (750) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    1000/ 1: "    mark {
+    (1000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    2000/ 2: "    mark {
+    (2000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    3000/ 3: "    mark {
+    (3000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    4000/ 4: "    mark {
+    (4000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    5000/ 5: "    mark {
+    (5000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    6000/ 6: "    mark {
+    (6000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    7000/ 7: "    mark {
+    (7000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    8000/ 8: "    mark {
+    (8000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack    9000/ 9: "    mark {
+    (9000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   10000/ 10: "    mark {
+    (10000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   20000/ 20: "    mark {
+    (20000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   30000/ 30: "    mark {
+    (30000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   40000/ 40: "    mark {
+    (40000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   50000/ 50: "    mark {
+    (50000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   60000/ 60: "    mark {
+    (60000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   70000/ 70: "    mark {
+    (70000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   80000/ 80: "    mark {
+    (80000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack   90000/ 90: "    mark {
+    (90000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  100000/ 100: "    mark {
+    (100000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  120000/ 120: "    mark {
+    (120000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  140000/ 140: "    mark {
+    (140000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  160000/ 160: "    mark {
+    (160000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  180000/ 180: "    mark {
+    (180000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  200000/ 200: "    mark {
+    (200000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  225000/ 225: "    mark {
+    (225000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHVertiShiftBack  250000/ 250: "    mark {
+    (250000) /VertiShiftBack /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHVertiShiftBack
+
+*OpenUI *SHPrintPosition/Posici<F3>n de impresi<F3>n: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHPrintPosition
+*DefaultSHPrintPosition: Center
+*SHPrintPosition TopLeft/Arriba izquierda: "    mark {
+    (TopLeft) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition Top/Arriba: "    mark {
+    (Top) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition TopRight/Arriba derecha: "    mark {
+    (TopRight) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition Left/Izquierda: "    mark {
+    (Left) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition Center/Centro: "    mark {
+    (Center) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition Right/Derecha: "    mark {
+    (Right) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition BottomLeft/Abajo izquierda: "    mark {
+    (BottomLeft) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition Bottom/Abajo: "    mark {
+    (Bottom) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHPrintPosition BottomRight/Abajo derecha: "    mark {
+    (BottomRight) /PrintPosition /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHPrintPosition
+
+*OpenUI *SHOutputDev/Destino: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHOutputDev
+*DefaultSHOutputDev: Print
+*SHOutputDev Print/Imprimir: "    mark {
+    (Print) /OutputDev /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOutputDev PrintArchive/Imprimir y archivar: "    mark {
+    (PrintArchive) /OutputDev /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHOutputDev Archive/Archivo: "    mark {
+    (Archive) /OutputDev /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOutputDev
+
+*OpenUI *SHWaitAfterProof/Esperar despu<E9>s de muestra: Boolean
+*OrderDependency: 40.0 DocumentSetup *SHWaitAfterProof
+*DefaultSHWaitAfterProof: False
+*SHWaitAfterProof False/Desactivado: "    mark {
+    (False) /WaitAfterProof /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHWaitAfterProof True/Activado: "    mark {
+    (True) /WaitAfterProof /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHWaitAfterProof
+
+*OpenUI *SHDelegation/Delegaci<F3>n de trabajos: Boolean
+*OrderDependency: 100.0 DocumentSetup *SHDelegation
+*DefaultSHDelegation: False
+*SHDelegation False/Desactivado: "    mark {
+    (False) /Delegation /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHDelegation True/Activado: "    mark {
+    (True) /Delegation /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHDelegation
+
+*OpenUI *SHCMYKInputProfile/Perfil CMYK de entrada: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHCMYKInputProfile
+*DefaultSHCMYKInputProfile: 4CB167869183B59BBAD20FB90CCF3E0C
+*SHCMYKInputProfile C1B9800A6A112FDE96F78295074F5C30/Euroscale Coated v2: " mark {
+    (C1B9800A6A112FDE96F78295074F5C30) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 9825F3376E81C474F90A788D6B8EB180/Euroscale Uncoated v2: " mark {
+    (9825F3376E81C474F90A788D6B8EB180) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 4F7B286EA6461C4CD287CB2F3D331DBA/ISO Coated sb: " mark {
+    (4F7B286EA6461C4CD287CB2F3D331DBA) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 4CB167869183B59BBAD20FB90CCF3E0C/Japan Color 2001 Coated: " mark {
+    (4CB167869183B59BBAD20FB90CCF3E0C) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile B4E3FBD4C04CC702A93EB806D974DBF2/Japan Color 2001 Uncoated: " mark {
+    (B4E3FBD4C04CC702A93EB806D974DBF2) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 4F0071959BF28519280837200D575A29/Japan Standard v2: " mark {
+    (4F0071959BF28519280837200D575A29) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile F8607E551233CEFDDA26D7D6BAAA2A4F/Japan Web Coated (Ad): " mark {
+    (F8607E551233CEFDDA26D7D6BAAA2A4F) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile D27078D05DF4552F10CBA4FC7B858A44/Photoshop 4 Default CMYK: " mark {
+    (D27078D05DF4552F10CBA4FC7B858A44) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 12A17C21311F56318E5152F3B7838E45/Photoshop 5 Default CMYK: " mark {
+    (12A17C21311F56318E5152F3B7838E45) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile B465D02C4E2EBCA02FD4771A1C8578B3/U.S. Sheetfed Coated v2: " mark {
+    (B465D02C4E2EBCA02FD4771A1C8578B3) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile B4C2943253492B9E3F3DC39D4C7281F8/U.S. Sheetfed Uncoated v2: " mark {
+    (B4C2943253492B9E3F3DC39D4C7281F8) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 79D7E984EA3AC74EED7CC92BF6B22A0D/U.S. Web Coated (SWOP) v2: " mark {
+    (79D7E984EA3AC74EED7CC92BF6B22A0D) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHCMYKInputProfile 69FEF828ECE289B7196C9DDA6325DB3F/U.S. Web Uncoated v2: " mark {
+    (69FEF828ECE289B7196C9DDA6325DB3F) /CMYKInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHCMYKInputProfile
+
+*OpenUI *SHRGBInputProfile/Perfil RGB de entrada: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHRGBInputProfile
+*DefaultSHRGBInputProfile: 1D3FDA2EDB4A89AB60A23C5F7C7D81DD
+*SHRGBInputProfile DEA88382D899D5F6E573B432473AE138/Adobe RGB (1998): " mark {
+    (DEA88382D899D5F6E573B432473AE138) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 2E54D10B392CAC47226469BA2EA95BD8/Apple RGB: " mark {
+    (2E54D10B392CAC47226469BA2EA95BD8) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile C2336F7797CE89CA59B34D9912612BF0/CIE RGB: " mark {
+    (C2336F7797CE89CA59B34D9912612BF0) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 91CF26C58E07EDA724FDBF3EADCE4505/ColorMatch RGB: " mark {
+    (91CF26C58E07EDA724FDBF3EADCE4505) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 998FBB5D3614AC87E52ABF701C11462F/ECI-RGB: " mark {
+    (998FBB5D3614AC87E52ABF701C11462F) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 73C70FC8E24C5E94779DAB9D03DE2239/Trinitron Monitor G22 D93: " mark {
+    (73C70FC8E24C5E94779DAB9D03DE2239) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 317695890D09F64FE3486AC9B7449879/Wide Gamut RGB: " mark {
+    (317695890D09F64FE3486AC9B7449879) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 09227759CDDEF937B4F0D438DCB4CCA0/DC Series Digital Camera - KODAK: " mark {
+    (09227759CDDEF937B4F0D438DCB4CCA0) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 3FC1FA7E516D462F72C1899948126AF7/matrixsrgb: " mark {
+    (3FC1FA7E516D462F72C1899948126AF7) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*SHRGBInputProfile 1D3FDA2EDB4A89AB60A23C5F7C7D81DD/sRGB IEC61966-2.1: " mark {
+    (1D3FDA2EDB4A89AB60A23C5F7C7D81DD) /RGBInputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHRGBInputProfile
+
+*OpenUI *SHOutputProfile/Perfil de salida: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHOutputProfile
+*DefaultSHOutputProfile: 00000000000000000000000000000000
+*SHOutputProfile 00000000000000000000000000000000/Auto: " mark {
+    (00000000000000000000000000000000) /OutputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHOutputProfile
+
+*OpenUI *SHTextOutputProfile/Perfil de salida para textos: PickOne
+*OrderDependency: 100.0 DocumentSetup *SHTextOutputProfile
+*DefaultSHTextOutputProfile: 00000000000000000000000000000000
+*SHTextOutputProfile 00000000000000000000000000000000/Auto: " mark {
+    (00000000000000000000000000000000) /TextOutputProfile /SHOptions /ProcSet findresource /setSHOptions get exec
+    } stopped pop cleartomark"
+*End
+*CloseUI: *SHTextOutputProfile
+
+*% --------------- Fonts ---------------
+
+*FCacheSize None: 3670016
+*DefaultFont: Courier
+
+*Font AdobeSansMM: Standard "(001.002)" Standard ROM
+*Font AdobeSerifMM: Standard "(001.003)" Standard ROM
+*Font AlbertusMT: Standard "(001.001)" Standard ROM
+*Font AlbertusMT-Italic: Standard "(001.001)" Standard ROM
+*Font AlbertusMT-Light: Standard "(001.001)" Standard ROM
+*Font AntiqueOlive-Bold: Standard "(001.002)" Standard ROM
+*Font AntiqueOlive-Compact: Standard "(001.002)" Standard ROM
+*Font AntiqueOlive-Italic: Standard "(001.002)" Standard ROM
+*Font AntiqueOlive-Roman: Standard "(001.002)" Standard ROM
+*Font Apple-Chancery: Standard "(3.0)" Standard ROM
+*Font Arial-BoldItalicMT: Standard "(001.003)" Standard ROM
+*Font Arial-BoldMT: Standard "(001.003)" Standard ROM
+*Font Arial-ItalicMT: Standard "(001.003)" Standard ROM
+*Font ArialMT: Standard "(001.003)" Standard ROM
+*Font AvantGarde-Book: Standard "(003.000)" Standard ROM
+*Font AvantGarde-BookOblique: Standard "(003.000)" Standard ROM
+*Font AvantGarde-Demi: Standard "(003.000)" Standard ROM
+*Font AvantGarde-DemiOblique: Standard "(003.000)" Standard ROM
+*Font Bodoni: Standard "(001.003)" Standard ROM
+*Font Bodoni-Bold: Standard "(001.003)" Standard ROM
+*Font Bodoni-BoldItalic: Standard "(001.003)" Standard ROM
+*Font Bodoni-Italic: Standard "(001.003)" Standard ROM
+*Font Bodoni-Poster: Standard "(001.003)" Standard ROM
+*Font Bodoni-PosterCompressed: Standard "(001.002)" Standard ROM
+*Font Bookman-Demi: Standard "(003.000)" Standard ROM
+*Font Bookman-DemiItalic: Standard "(003.000)" Standard ROM
+*Font Bookman-Light: Standard "(003.000)" Standard ROM
+*Font Bookman-LightItalic: Standard "(003.000)" Standard ROM
+*Font Carta: Special "(001.001)" Special ROM
+*Font Chicago: Standard "(3.0)" Standard ROM
+*Font Clarendon: Standard "(001.002)" Standard ROM
+*Font Clarendon-Bold: Standard "(001.002)" Standard ROM
+*Font Clarendon-Light: Standard "(001.002)" Standard ROM
+*Font CooperBlack: Standard "(001.004)" Standard ROM
+*Font CooperBlack-Italic: Standard "(001.004)" Standard ROM
+*Font Copperplate-ThirtyThreeBC: Standard "(001.003)" Standard ROM
+*Font Copperplate-ThirtyTwoBC: Standard "(001.003)" Standard ROM
+*Font Coronet-Regular: Standard "(001.002)" Standard ROM
+*Font Courier: Standard "(004.000)" Standard ROM
+*Font Courier-Bold: Standard "(004.000)" Standard ROM
+*Font Courier-BoldOblique: Standard "(004.000)" Standard ROM
+*Font Courier-Oblique: Standard "(004.000)" Standard ROM
+*Font Eurostile: Standard "(001.003)" Standard ROM
+*Font Eurostile-Bold: Standard "(001.002)" Standard ROM
+*Font Eurostile-BoldExtendedTwo: Standard "(001.003)" Standard ROM
+*Font Eurostile-ExtendedTwo: Standard "(001.003)" Standard ROM
+*Font Geneva: Standard "(3.0)" Standard ROM
+*Font GillSans: Standard "(001.003)" Standard ROM
+*Font GillSans-Bold: Standard "(001.002)" Standard ROM
+*Font GillSans-BoldCondensed: Standard "(001.002)" Standard ROM
+*Font GillSans-BoldItalic: Standard "(001.003)" Standard ROM
+*Font GillSans-Condensed: Standard "(001.002)" Standard ROM
+*Font GillSans-ExtraBold: Standard "(001.002)" Standard ROM
+*Font GillSans-Italic: Standard "(001.003)" Standard ROM
+*Font GillSans-Light: Standard "(001.002)" Standard ROM
+*Font GillSans-LightItalic: Standard "(001.003)" Standard ROM
+*Font Goudy: Standard "(001.004)" Standard ROM
+*Font Goudy-Bold: Standard "(001.003)" Standard ROM
+*Font Goudy-BoldItalic: Standard "(001.003)" Standard ROM
+*Font Goudy-ExtraBold: Standard "(001.002)" Standard ROM
+*Font Goudy-Italic: Standard "(001.003)" Standard ROM
+*Font Helvetica: Standard "(003.000)" Standard ROM
+*Font Helvetica-Bold: Standard "(003.000)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(003.000)" Standard ROM
+*Font Helvetica-Condensed: Standard "(003.000)" Standard ROM
+*Font Helvetica-Condensed-Bold: Standard "(003.000)" Standard ROM
+*Font Helvetica-Condensed-BoldObl: Standard "(003.000)" Standard ROM
+*Font Helvetica-Condensed-Oblique: Standard "(003.000)" Standard ROM
+*Font Helvetica-Narrow: Standard "(003.000)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(003.000)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(003.000)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(003.000)" Standard ROM
+*Font Helvetica-Oblique: Standard "(003.000)" Standard ROM
+*Font HoeflerText-Black: Standard "(1.0)" Unknown ROM
+*Font HoeflerText-BlackItalic: Standard "(1.0)" Unknown ROM
+*Font HoeflerText-Italic: Standard "(1.0)" Unknown ROM
+*Font HoeflerText-Ornaments: Special "(001.001)" Standard ROM
+*Font HoeflerText-Regular: Standard "(1.0)" Unknown ROM
+*Font JoannaMT: Standard "(001.001)" Standard ROM
+*Font JoannaMT-Bold: Standard "(001.001)" Standard ROM
+*Font JoannaMT-BoldItalic: Standard "(001.001)" Standard ROM
+*Font JoannaMT-Italic: Standard "(001.001)" Standard ROM
+*Font LetterGothic: Standard "(001.005)" Standard ROM
+*Font LetterGothic-Bold: Standard "(001.007)" Standard ROM
+*Font LetterGothic-BoldSlanted: Standard "(001.006)" Standard ROM
+*Font LetterGothic-Slanted: Standard "(001.005)" Standard ROM
+*Font LubalinGraph-Book: Standard "(001.004)" Standard ROM
+*Font LubalinGraph-BookOblique: Standard "(001.004)" Standard ROM
+*Font LubalinGraph-Demi: Standard "(001.004)" Standard ROM
+*Font LubalinGraph-DemiOblique: Standard "(001.004)" Standard ROM
+*Font Marigold: Standard "(001.001)" Standard ROM
+*Font MonaLisa-Recut: Standard "(001.001)" Standard ROM
+*Font Monaco: Standard "(3.0)" Standard ROM
+*Font NewCenturySchlbk-Bold: Standard "(003.000)" Standard ROM
+*Font NewCenturySchlbk-BoldItalic: Standard "(003.000)" Standard ROM
+*Font NewCenturySchlbk-Italic: Standard "(003.000)" Standard ROM
+*Font NewCenturySchlbk-Roman: Standard "(003.000)" Standard ROM
+*Font NewYork: Standard "(001.000)" ExtendedRoman ROM
+*Font Optima: Standard "(001.006)" Standard ROM
+*Font Optima-Bold: Standard "(001.007)" Standard ROM
+*Font Optima-BoldItalic: Standard "(001.001)" Standard ROM
+*Font Optima-Italic: Standard "(001.001)" Standard ROM
+*Font Oxford: Standard "(001.001)" Standard ROM
+*Font Palatino-Bold: Standard "(003.000)" Standard ROM
+*Font Palatino-BoldItalic: Standard "(003.000)" Standard ROM
+*Font Palatino-Italic: Standard "(003.000)" Standard ROM
+*Font Palatino-Roman: Standard "(003.000)" Standard ROM
+*Font StempelGaramond-Bold: Standard "(001.003)" Standard ROM
+*Font StempelGaramond-BoldItalic: Standard "(001.003)" Standard ROM
+*Font StempelGaramond-Italic: Standard "(001.003)" Standard ROM
+*Font StempelGaramond-Roman: Standard "(001.003)" Standard ROM
+*Font Symbol: Special "(001.008)" Special ROM
+*Font Tekton: Standard "(001.002)" Standard ROM
+*Font Times-Bold: Standard "(003.000)" Standard ROM
+*Font Times-BoldItalic: Standard "(003.000)" Standard ROM
+*Font Times-Italic: Standard "(003.000)" Standard ROM
+*Font Times-Roman: Standard "(003.000)" Standard ROM
+*Font TimesNewRomanPS-BoldItalicMT: Standard "(001.003)" Standard ROM
+*Font TimesNewRomanPS-BoldMT: Standard "(001.004)" Standard ROM
+*Font TimesNewRomanPS-ItalicMT: Standard "(001.003)" Standard ROM
+*Font TimesNewRomanPSMT: Standard "(001.003)" Standard ROM
+*Font Univers: Standard "(001.004)" Standard ROM
+*Font Univers-Bold: Standard "(001.004)" Standard ROM
+*Font Univers-BoldExt: Standard "(001.001)" Standard ROM
+*Font Univers-BoldExtObl: Standard "(001.001)" Standard ROM
+*Font Univers-BoldOblique: Standard "(001.004)" Standard ROM
+*Font Univers-Condensed: Standard "(001.003)" Standard ROM
+*Font Univers-CondensedBold: Standard "(001.002)" Standard ROM
+*Font Univers-CondensedBoldOblique: Standard "(001.002)" Standard ROM
+*Font Univers-CondensedOblique: Standard "(001.003)" Standard ROM
+*Font Univers-Extended: Standard "(001.001)" Standard ROM
+*Font Univers-ExtendedObl: Standard "(001.001)" Standard ROM
+*Font Univers-Light: Standard "(001.004)" Standard ROM
+*Font Univers-LightOblique: Standard "(001.004)" Standard ROM
+*Font Univers-Oblique: Standard "(001.004)" Standard ROM
+*Font Wingdings: Special "(001.001)" Special ROM
+*Font Wingdings-Regular: Special "(Version 2.00)" Special ROM
+*Font ZapfChancery-MediumItalic: Standard "(003.000)" Standard ROM
+*Font ZapfDingbats: Special "(002.000)" Special ROM
+
+*?FontList: "
+  save
+    (*) {cvn ==} 128 string /Font resourceforall
+    (*) = flush
+  restore"
+*End
+*?FontQuery: "
+  save
+    { count 1 gt
+      { exch dup 127 string cvs (/) print print (:) print
+      /Font resourcestatus {pop pop (Yes)} {(No)} ifelse =
+      } { exit } ifelse
+    } bind loop
+    (*) = flush
+  restore"
+*End
+
+*% --------------- Printer Messages ---------------
+
+*% ----- Consumables
+*PrinterError: "paper empty"
+*% ----- Engine
+*PrinterError: "paper jam"
+*PrinterError: "option error"
+*PrinterError: "check printer control panel"
+*PrinterError: "fatal, check printer control panel"
+*PrinterError: "check printer power and cable connection"
+*PrinterError: "communication error, call service!"
+*PrinterError: "interface board error, call service!"
+*PrinterError: "SERIAL NUMBER MISMATCH, call service!"
+
+*% ----- General
+*Status: "idle"
+*Status: "busy"
+*Status: "waiting"
+*Status: "printing"
+*Status: "initializing"
+*Status: "offline, wait for a user action"
+*% ----- Consumables
+*Status: "PrinterError: paper empty"
+*Status: "PrinterError: staples empty"
+*% ----- Engine
+*Status: "PrinterError: paper jam"
+*Status: "PrinterError: option error"
+*Status: "PrinterError: check printer control panel"
+*Status: "PrinterError: fatal, check printer control panel"
+*Status: "PrinterError: check printer power and cable connection"
+*Status: "PrinterError: communication error, call service!"
+*Status: "PrinterError: interface board error, call service!"
+*Status: "PrinterError: SERIAL NUMBER MISMATCH, call service!"
+
+*Source: "EtherTalk"
+*Source: "Parallel"
+*Source: "LPR"
+
+*Message: "%%[ exitserver: permanent state may be changed ]%%"
+*Message: "%%[ Flushing: rest of job (to end-of-file) will be ignored ]%%"
+*Message: "\FontName\ not found, using Courier"
+
+*% --------------- Color Separation ---------------
+
+*DefaultColorSep: ProcessBlack.71lpi.300x300dpi/71 lpi / 300 dpi
+
+*% ----- 71 lpi / 300 dpi
+*ColorSepScreenAngle ProcessBlack.71lpi.300x300dpi/71 lpi / 300 dpi: "45"
+*ColorSepScreenAngle ProcessCyan.71lpi.300x300dpi/71 lpi / 300 dpi: "105"
+*ColorSepScreenAngle ProcessMagenta.71lpi.300x300dpi/71 lpi / 300 dpi: "75"
+*ColorSepScreenAngle ProcessYellow.71lpi.300x300dpi/71 lpi / 300 dpi: "90"
+*ColorSepScreenFreq ProcessBlack.71lpi.300x300dpi/71 lpi / 300 dpi: "71"
+*ColorSepScreenFreq ProcessCyan.71lpi.300x300dpi/71 lpi / 300 dpi: "71"
+*ColorSepScreenFreq ProcessMagenta.71lpi.300x300dpi/71 lpi / 300 dpi: "71"
+*ColorSepScreenFreq ProcessYellow.71lpi.300x300dpi/71 lpi / 300 dpi: "71"
+
+*% End of PPD file

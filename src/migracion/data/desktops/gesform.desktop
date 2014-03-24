@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=/opt/icons/graphicaltree_icon.png
+Type=Application
+Exec=_@_USER_@_/.wine/cce/gesform.sh
+Name=Gesform
+

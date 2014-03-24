@@ -28,3 +28,5 @@ cp -r data/wine/* $HOME/.wine/
 #################################
 echo "Accesos directos"
 cp data/desktops/* $HOME/Escritorio/
+
+sed -e "s%_@_USER_@_%$HOME%g" $HOME/Escritorio/gesform.desktop

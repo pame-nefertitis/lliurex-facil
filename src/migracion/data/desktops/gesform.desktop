@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Icon=/opt/icons/graphicaltree_icon.png
 Type=Application
-Exec=_@_USER_@_/.wine/cce/gesform.sh
+Exec=_@_USER_@_/.wine/dosdevices/c:/cce/Gesform/gesform.sh
 Name=Gesform
-
+Comment=Gesform

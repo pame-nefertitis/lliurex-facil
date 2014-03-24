@@ -1,0 +1,1680 @@
+*PPD-Adobe: "4.3"
+*% Adobe Systems PostScript(R) Printer Description File
+*% Copyright 1987-1996 Adobe Systems Incorporated.
+*% All Rights Reserved.
+*% Permission is granted for redistribution of this file as
+*% long as this copyright notice is intact and the contents
+*% of the file is not altered in any way from its original form.
+*% End of Copyright statement
+*FileVersion: "4.02"
+*FormatVersion: "4.3"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: Spanish
+*Manufacturer: "RISO KAGAKU CORPORATION"
+*ModelName: "RISO PS7R for HC5500 V3015"
+*PCFileName: "P7H7ES.ppd"
+*Product: "(RISO Controller PS7R for HC5500)"
+*PSVersion: "(3015.000) 0"
+*ShortNickName: "RISO PS7R for HC5500 V3015"
+*NickName: "RISO Controller PS7R for HC5500 V3015"
+
+
+*%                    Create
+*% 2003.09.03 0.9bh  ----------------
+*% 2003.09.03         Delete 1 from *NTLLayoutNum
+*% 2003.09.03         Add LayoutNum setting to *NTLLayout=None
+*% 2003.09.03         Change default of *NTLErrDiff to ErrDifu
+*% 2003.09.03 0.9bh1 -----------------
+*% 2003.09.03         Move NTL_PPD_ON in *ColorModel
+*% 2003.09.03         Change default of *NTLPageOrder2
+*% 2003.09.03 0.9bh2 -----------------
+*% 2003.09.03         Change Index of *NTLPageOrder2
+*% 2003.09.03 0.9bh3 -----------------
+*% 2003.09.09         Add %PPD_ColorSimulation in *TL_ColorSimulation
+*% 2003.09.09 0.9bh4 -----------------
+*% 2003.09.16         BugFix *Resolution 
+*% 2003.09.16 0.9bh5 -----------------
+*% 2003.09.16         Change *DefaultTL_ColorSimulation
+*% 2003.09.16 0.9bh6 -----------------
+*% 2003.09.19         Add *NTLOrientation
+*% 2003.09.19 0.9bh7 -----------------
+*% 2003.09.25         Add PPD_comment to CustomSize
+*% 2003.10.03         Change String in *NTLErrDiff and *NTLLayout
+*% 2003.10.03         Comment out *MirrorPrint and *NegativePrint
+*% 2003.10.03 0.9bh8 -----------------
+*% 2003.10.07         Change default of *NTLImageMode to Photo
+*% 2003.10.07         Change HWMargins of CustomPageSizes
+*% 2003.10.07         Change margins of ImageableArea
+*% 2003.10.03 0.9bh9 -----------------
+*% 2003.10.08         Acrobat colortransfer TEST ----> ok
+*% 2003.10.16         Add some PageSize's
+*% 2003.10.03 0.9bhA -----------------
+*% 2003.10.26         Add NTL_notUseCIE to *ColorModel Gray
+*% 2003.10.26         Add NTL_notUseCIE to *NTLImageMode Normal
+*% 2003.10.26         Add NTL_notUseCIE check to *TL_ColorSimulation
+*% 2003.10.26         Add translate to NTLLastSetPageDevice define
+*% 2003.10.26         Change *Duplex to *NTLDuplex
+*% 2003.10.26         Add NTL_FormDuplex to *NTLForm
+*% 2003.10.26         Add NTL_FormDuplex check to *NTLDuplex
+*% 2003.10.26         Delete NTL_PPD_ON check from *NTLOrientation
+*% 2003.10.27 0.9bhB ----------------- *FileVersion: "1.11"
+*% 2003.10.29         Change *InputSlot strings
+*% 2003.10.29         Change *Imageablearea margin
+*% 2003.10.27 0.9bhC ----------------- *FileVersion: "1.12"
+*% 2003.11.13         Change *Resolution to *NTLResolution
+*% 2003.11.13         Change the display string of eatch items
+*% 2003.11.13 0.9bhD ----------------- *FileVersion: "1.13"
+*% 2003.11.18         Check NTL_FormDuplex in NTLSetPageSize define
+*% 2003.11.18         Change NTL_FormDuplex to int from bool
+*% 2003.11.18         Delete NTL_FormDuplex check from Duplex
+*% 2003.11.18         Change parameter of NTLSetPageSize
+*% 2003.11.18 0.9bhE ----------------- *FileVersion: "1.14"
+*% 2003.11.20         Comment out NTL_notUseCIE set in *NTLImageMode Normal
+*% 2003.11.20         Comment out /UseCIEColor true in *TL_ColorSimulation Simulate
+*% 2003.11.20 0.9bhF ----------------- *FileVersion: "1.15"
+*% 2003.12.08         Change order of paper size
+*% 2003.11.20 0.9bhG ----------------- *FileVersion: "1.16"
+*% 2004.01.13         Change *ImageableArea PostW
+*% 2004.01.13         Change NTLPageCount by NTL_FormDuplex
+*% 2004.01.13 0.9bhH ----------------- *FileVersion: "1.17"
+*% 2004.01.14         Change NTLPageCount by NTL_FormDuplex
+*% 2004.01.14 0.9bhI ----------------- *FileVersion: "1.18"
+*% 2004.01.20         Change NTLPageCount by NTL_FormDuplex
+*% 2004.01.20 0.9bhJ ----------------- *FileVersion: "1.19"
+*% 2004.02.10         Change CustomPageSize 
+*% 2004.02.10 0.9bhK ----------------- *FileVersion: "1.20"
+*% 2004.04.02         Change Page Scale for HAGAKI problem
+*% 2004.04.02 0.9bhL ----------------- *FileVersion: "1.21"
+*% 2004.04.22         Bug Fix NTLLastSetPageDevice
+*% 2004.04.22         Move NTLPageCount to globaldict
+*% 2004.04.22 0.9bhM ----------------- *FileVersion: "1.22"
+*% 2004.07.30         Add japanese fonts
+*% 2004.07.30         Change NTLPageXdivY
+*% 2004.07.30         Change *ColorModel Gray
+*% 2004.07.30 0.9bhN ----------------- *FileVersion: "1.4"
+*% 2004.08.25         Change the size of the letter to 612x793
+*% 2004.08.25         Change the size of the tabloid to 793x1224
+*% 2004.08.25 0.9bhO ----------------- *FileVersion: "1.41"
+*% 2004.08.31         Change *Throughput to 74
+*% 2004.08.31         Add *Duplex
+*% 2004.08.31 0.9bhP ----------------- *FileVersion: "1.42"
+*% 2004.08.31         Change *Throughput to 105
+*% 2004.09.09 0.9bhQ ----------------- *FileVersion: "1.43"
+*% 2004.10.14         Add *NTLPrintOrder
+*% 2004.10.14         Add "Archive" to *NTLQueSelect
+*% 2004.10.14         Add some commands for finisher
+*% 2004.10.14 1.0 -------------------- *FileVersion: "1.5"
+*% 2004.10.19         Add PPD comments
+*% 2004.10.19 1.01 ------------------- *FileVersion: "1.51"
+*% 2004.10.20         Add "TLSingle" and "TRSingle" to *NTLStaple
+*% 2004.10.20 1.02 ------------------- *FileVersion: "1.52"
+*% 2004.11.04         Add "3 Holes" to *NTLPunchHole
+*% 2004.11.04 1.03 ------------------- *FileVersion: "1.53"
+*% 2004.11.09         Modified *NTLCoverFrontTray
+*% 2004.11.09 1.04 ------------------- *FileVersion: "1.54"
+*% 2005.01.26         Modified the default of *NTLSort to ON
+*% 2005.01.26 1.05 ------------------- *FileVersion: "1.55"
+*% 2005.03.02         Modified *NTLBookletMatchPaper and *NTLSPMatchPaper name
+*% 2005.03.02 1.06 ------------------- *FileVersion: "1.56"
+*% 2005.03.10         Add PPD comment at *NTLOrientation
+*% 2005.03.10 1.07 ------------------- *FileVersion: "1.57"
+*% 2005.06.17         Add Archive1 - Archive9 at *NTLQueSelect
+*% 2005.06.17 1.08 ------------------- *FileVersion: "1.58"
+*% 2005.07.15         Supported for PEL2
+*% 2005.07.15         Add Envelope, PastePaper and PastePaper(IJ) at *MediaType
+*% 2005.07.15         Add Kaku0 - Kaku3, Long3 and Long4 at *PageSize, *PageRegion, *ImageableArea and *PageDimension
+*% 2005.07.15         Add SingleAndBothF and SingleAndBothB at *NTLForm
+*% 2005.07.15         Add *NTLMixedPaperSize
+*% 2005.07.15         Add *NTLFormIndividualSpec
+*% 2005.07.15         Add *NTLUseSecurityPrint
+*% 2005.07.15         Add *NTLNotDispJobName
+*% 2005.07.15         Change NTL_PPD_ON to NTL_PPD_PAGESIZE_ON at PageSize and PageRegion
+*% 2005.07.15 2.90 ------------------- *FileVersion: "2.90"
+*% 2005.08.15         Modified *NTLMixedPaperSIze name
+*% 2005.08.15 3.00 ------------------- *FileVersion: "3.00"
+*% 2006.05.15         Change *Throughput to 120
+*% 2005.05.15 3.01 ------------------- *FileVersion: "3.01"
+*% 2008.05.12         For *NTLMixedPaperSize fix *CustomPageSize and NTLLastSetPageDevice
+*% 2008.05.12 3.02 ------------------- *FileVersion: "3.02"
+*% 2008.09.17         For *NTLMixedPaperSize add Acrobat Axis Rotation Info.
+*% 2008.09.17         For Adobe Acrobat Version Difference
+*% 2008.09.17         For Adobe Design CS3 Mirror Print Fix
+*% 2008.09.17         For CustomPageSize Orientation Support
+*% 2008.09.17         Remove Not Used Functions And Optimized For Simple
+*% 2008.09.17 4.00 ------------------- *FileVersion: "4.00"
+*% 2008.10.10        NTL_PPD_PAGESIZE_ON condition select for PageSize
+*% 2008.10.10 4.01   ----------------- *FileVersion: "4.01"
+*% 2009.01.21        Restore NTLLastSetPageDevice for Adobe InDesign
+*% 2009.01.21 4.02   ----------------- *FileVersion: "4.02"
+
+
+*% ========== 5.4 Installable Options, and Constraints ======================================
+
+*OpenGroup: InstallableOptions
+
+*OpenUI *InstalledMemory: PickOne
+*DefaultInstalledMemory: 32Meg
+*InstalledMemory  32Meg: ""
+*?InstalledMemory: "currentsystemparams /RamSize get 1048576 div cvi 10 string cvs print (Meg)="
+*CloseUI: *InstalledMemory
+
+*% Other installable options go here
+
+*CloseGroup: InstallableOptions
+
+*% ========== 5.5 Basic Device Capabilities =================================================
+
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*FileSystem: True
+*?FileSystem: "
+false
+(*) {
+	/DevDict exch currentdevparams def
+	DevDict /Writeable known {DevDict /Writeable get} {false} ifelse
+	DevDict /Mounted   known {DevDict /Mounted   get} {false} ifelse
+	DevDict /HasNames  known {DevDict /HasNames  get} {false} ifelse
+	and and {pop true} if
+} 128 string /IODevice resourceforall
+{(True)} {(False)} ifelse ="
+*End
+*LanguageLevel: "3"
+*Throughput: "120"
+*TTRasterizer: Type42
+*?TTRasterizer: "(Type42) ="
+
+*% ========== 5.6 System Management =========================================================
+
+*% *PatchFile  would go here for bugs found subsequent to release of this PPD
+*% *?PatchFile would go here for bugs found subsequent to release of this PPD
+*% *JobPatchFile would go here for bugs found subsequent to release of this PPD
+*FreeVM: "30135136"
+*FCacheSize 32Meg: 204800
+*VMOption 32Meg/Standard: "30135136"
+
+*Reset: "
+ count 0 eq
+ { false } { true exch startjob } ifelse
+ not {
+    (WARNING: Cannot reset printer.) =
+    (Missing or invalid password.) =
+    (Please contact the author of this software.) = flush quit
+    } if
+ systemdict /quit get exec
+ (WARNING : Printer Reset Failed.) = flush
+"
+*End
+
+*Password: "0"
+
+*ExitServer: "
+count 1 ge {true exch startjob} {false} ifelse
+not {
+   (ERROR: *ExitServer cannot start unencapsulated job.) =
+   (       Password is probably invalid.) =
+} if"
+*End
+
+*SuggestedJobTimeout: "0"
+*SuggestedWaitTimeout: "300"
+*PrintPSErrors: True
+*% *DeviceAdjustMatrix should not be used for new PPDs with new products
+
+*% ========== 5.7 Emulations and Protocols ==================================================
+
+*% 5.8 ========== Features Accessible Only Through Job Control Language =====================
+
+*% ========== 5.9 Resolution and Appearance Control =========================================
+*OpenUI *Resolution: PickOne
+*OrderDependency: 19.0 AnySetup *Resolution
+*DefaultResolution: 300x300dpi
+*Resolution 300x300dpi: ""
+*CloseUI: *Resolution
+
+*OpenUI *NTLResolution/Calidad de la imagen: PickOne
+*OrderDependency: 20.0 AnySetup *NTLResolution
+*DefaultNTLResolution: 300x300dpi
+*NTLResolution 300x300dpi/Estándar (300 x 300 dpi): "
+%PPD_VERSION=4.02 2009.01.21
+%PPD_Resolution=300x300
+%PPD_GammaUse=0
+"
+*End
+*NTLResolution 300x600dpi/Alta definición (300 x 600 dpi): "
+%PPD_VERSION=4.02 2009.01.21
+%PPD_Resolution=300x600
+%PPD_GammaUse=0
+"
+*End
+*?NTLResolution: "
+  save
+    currentpagedevice /HWResolution get 0 get
+    cvi (   ) cvs print (dpi) = flush
+  restore
+"
+*End
+*CloseUI: *NTLResolution
+
+*% ========== 5.10 Gray Levels and Halftoning ===============================================
+
+*%ContoneOnly: True
+*ScreenAngle: "45"
+*ScreenFreq: "80"
+*DefaultScreenProc: Dot
+*ScreenProc Dot: "{abs exch abs 2 copy add 1 le {dup mul exch dup mul add 1 exch sub}
+{1 sub dup mul exch 1 sub dup mul add 1 sub} ifelse}
+bind"
+*End
+
+*DefaultTransfer: Null
+
+*% ========== 5.11 Color Adjustment =========================================================
+
+*OpenUI *ColorModel/Modo color: PickOne
+*OrderDependency: 21.0 AnySetup *ColorModel
+*DefaultColorModel: CMYK
+*ColorModel CMYK/Color: "%PPD_ColorModel=1"
+*ColorModel Gray/Monocromo: "%PPD_ColorModel=0"
+*?ColorModel: "
+  save
+    currentpagedevice /ProcessColorModel get
+    dup /DeviceCMYK eq
+      { pop (CMYK) }
+      { /DeviceGray eq
+        { (Gray) }
+        { (CMYK) }
+      ifelse }
+    ifelse
+    = flush
+  restore
+"
+*End
+*CloseUI: *ColorModel
+
+*ColorRenderDict DefaultColorRendering: "/DefaultColorRendering /ColorRendering findresource setcolorrendering"
+*ColorRenderDict AppleMonitor: "/AppleMonitor /ColorRendering findresource setcolorrendering"
+*ColorRenderDict CRDAbsolute: "/CRDAbsolute /ColorRendering findresource setcolorrendering"
+*ColorRenderDict CRDPerceptual: "/CRDPerceptual /ColorRendering findresource setcolorrendering"
+*ColorRenderDict CRDRelative: "/CRDRelative /ColorRendering findresource setcolorrendering"
+*ColorRenderDict CRDSaturation: "/CRDSaturation /ColorRendering findresource setcolorrendering"
+
+*RenderingIntent: DefaultColorRendering
+
+*% ========== 5.14 Media Selection ==========================================================
+
+*OpenUI *InputSlot/Bandeja de alimentación de papel: PickOne
+*OrderDependency: 22.0 AnySetup *InputSlot
+*DefaultInputSlot: Tray1
+*InputSlot Slot/Selección automática de la bandeja: "%PPD_InputSlot=0"
+*InputSlot Tray1/Bandeja de Alimentación 1: "%PPD_InputSlot=3"
+*InputSlot Tray2/Bandeja de Alimentación 2: "%PPD_InputSlot=4"
+*InputSlot ManualFeed/Bandeja de Alimentación Estándar: "%PPD_InputSlot=2"
+*?InputSlot: "currentpagedevice /ManualFeed get {(ManualFeed)} {
+    (TraySelect ?) 16 string /CPSI /ProcSet findresource
+    /externalcommand get exec pop
+     dup (0) eq { pop (Slot) } {
+      dup (3) eq { pop (Tray1) } {
+       dup (4) eq { pop (Tray2) } {
+        dup (2) eq { pop (ManualFeed) } {
+         pop (Slot)
+        } ifelse
+       } ifelse
+      } ifelse
+     } ifelse
+  } ifelse ="
+*End
+*CloseUI: *InputSlot
+
+*OpenUI *MediaType/Tipo de papel: PickOne
+*OrderDependency: 23.0 AnySetup *MediaType
+*DefaultMediaType: Normal
+*MediaType Standard/Papel HC (estándar): "%PPD_MediaType=0"
+*MediaType HiGrade/Papel HC mate (gran calidad): "%PPD_MediaType=1"
+*MediaType Normal/Papel estándar: "%PPD_MediaType=2"
+*MediaType PCardIJ/Tarjeta postal (IJ): "%PPD_MediaType=3"
+*MediaType PostCard/Tarjeta postal: "%PPD_MediaType=4"
+*MediaType Normal1/estándar 1: "%PPD_MediaType=7"
+*MediaType HiQuality1/gran calidad 1: "%PPD_MediaType=8"
+*MediaType HiQuality2/gran calidad 2: "%PPD_MediaType=9"
+*MediaType Envelope/Sobre: "%PPD_MediaType=10"
+*MediaType PastePaper/Cartulina: "%PPD_MediaType=11"
+*MediaType PastePaperIJ/Cartulin-IJ: "%PPD_MediaType=12"
+*?MediaType: "
+  (PaperType ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+   dup (1) eq { pop (Standard) } {
+     dup (2) eq { pop (HiGrade) } {
+      dup (3) eq { pop (Normal) } {
+       dup (4) eq { pop (PCardIJ) } {
+        dup (5) eq { pop (PostCard) } {
+         dup (8) eq { pop (Normal1) } {
+          dup (9) eq { pop (HiQuality1) } {
+           dup (10) eq { pop (HiQuality2) } {
+            dup (11) eq { pop (Envelope) } {
+             dup (12) eq { pop (PastePaper) } {
+              dup (13) eq { pop (PasterPaperIJ) } {
+               pop (Standard)
+              } ifelse
+             } ifelse
+            } ifelse
+           } ifelse
+          } ifelse
+         } ifelse
+        } ifelse
+       } ifelse
+      } ifelse
+     } ifelse
+    } ifelse
+  ="
+*End
+*CloseUI: *MediaType
+
+*OpenUI *NTLDensity/Imprimir densidad: PickOne
+*OrderDependency: 24.0 AnySetup *NTLDensity
+*DefaultNTLDensity: 3
+*NTLDensity 1/Densidad 1 (claro): "%PPD_Density=1"
+*NTLDensity 2/Densidad 2 (ligeramente claro): "%PPD_Density=2"
+*NTLDensity 3/Densidad 3 (estándar): "%PPD_Density=3"
+*NTLDensity 4/Densidad 4 (ligeramente oscuro): "%PPD_Density=4"
+*NTLDensity 5/Densidad 5 (oscuro): "%PPD_Density=5"
+*?NTLDensity: "
+  (Density ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+   dup (0) eq { pop (0) } {
+    dup (1) eq { pop (1) } {
+     dup (2) eq { pop (2) } {
+      dup (3) eq { pop (3) } {
+       dup (4) eq { pop (4) } {
+        dup (5) eq { pop (5) } {
+         pop (0)
+        } ifelse
+       } ifelse
+      } ifelse
+     } ifelse
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLDensity
+
+*OpenUI *NTLAntiAlias/Procesando mejora de caracteres: PickOne
+*OrderDependency: 25.0 AnySetup *NTLAntiAlias
+*DefaultNTLAntiAlias: OFF
+*NTLAntiAlias OFF/DESACTIVADO: "%PPD_AntiAlias=0"
+*NTLAntiAlias ON/ACTIVADO: "%PPD_AntiAlias=1"
+*?NTLAntiAlias: "
+  (AntiAlias ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (OFF) } {
+   dup (1) eq { pop (ON) } {
+        pop (OFF)
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLAntiAlias
+
+*OpenUI *NTLErrDiff/Explorando: PickOne
+*OrderDependency: 26.0 AnySetup *NTLErrDiff
+*DefaultNTLErrDiff: ErrDifu
+*NTLErrDiff Cell1/Puntos pantalla (70 línea): "%PPD_ErrDiff=0"
+*NTLErrDiff Cell2/Puntos pantalla (100 línea): "%PPD_ErrDiff=1"
+*NTLErrDiff ErrDifu/Error procesado difusión: "%PPD_ErrDiff=2"
+*?NTLErrDiff: "
+  (ErrDiff ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (Cell1) } {
+   dup (1) eq { pop (ErrDifu) } {
+        pop (ErrDifu)
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLErrDiff
+
+*OpenUI *NTLPrePrint/Pausa después de muestra: PickOne
+*OrderDependency: 27.0 AnySetup *NTLPrePrint
+*DefaultNTLPrePrint: OFF
+*NTLPrePrint OFF/DESACTIVADO: "%PPD_PrePrint=0"
+*NTLPrePrint ON/ACTIVADO: "%PPD_PrePrint=1"
+*?NTLPrePrint: "
+  (PrePrint ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (OFF) } {
+   dup (1) eq { pop (ON) } {
+        pop (OFF)
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLPrePrint
+
+*% ========== Device Setting ===========================================
+
+*OpenUI *NTLRotation/Rotación imagen: PickOne
+*OrderDependency: 28.0 AnySetup *NTLRotation
+*DefaultNTLRotation: Auto
+*NTLRotation Auto/Automática: "%PPD_Rotation=-1"
+*NTLRotation 0/0 grados: "%PPD_Rotation=0"
+*NTLRotation 90/90 grados: "%PPD_Rotation=1"
+*NTLRotation 180/180 grados: "%PPD_Rotation=2"
+*NTLRotation 270/270 grados: "%PPD_Rotation=3"
+*?NTLRotation: "
+  (Rotation ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (Auto) eq { pop (Auto) } {
+  dup (0) eq { pop (0) } {
+   dup (90) eq { pop (90) } {
+    dup (180) eq { pop (180) } {
+     dup (270) eq { pop (270) } {
+        pop (Auto)
+     } ifelse
+    } ifelse
+   } ifelse
+  } ifelse
+  } ifelse
+  ="
+*End
+*CloseUI: *NTLRotation
+
+*OpenUI *NTLSort/Modo eyección: PickOne
+*OrderDependency: 28.5 AnySetup *NTLSort
+*DefaultNTLSort: ON
+*NTLSort OFF/No intercaldas: "%PPD_Sort=0"
+*NTLSort ON/Intercaladas: "%PPD_Sort=1"
+*?NTLSort: "
+  (Sort ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (OFF) } {
+   dup (1) eq { pop (ON) } {
+        pop (OFF)
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLSort
+
+*OpenUI *NTLAssort/Separación: PickOne
+*OrderDependency: 29.0 AnySetup *NTLAssort
+*DefaultNTLAssort: OFF
+*NTLAssort OFF/DESACTIVADO: "%PPD_Assort=0"
+*NTLAssort ON1/Entre tareas: "%PPD_Assort=1"
+*NTLAssort ON2/Entre conjuntos o paginas: "%PPD_Assort=2"
+*?NTLAssort: "
+  (Assort ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (OFF) } {
+   dup (1) eq { pop (ON1) } {
+    dup (2) eq { pop (ON2) } {
+        pop (OFF)
+    } ifelse
+   } ifelse
+  } ifelse
+  ="
+*End
+*CloseUI: *NTLAssort
+
+*OpenUI *NTLForm/Patrón formulario impresión: PickOne
+*OrderDependency: 31.0 AnySetup *NTLForm
+*DefaultNTLForm: OFF
+*NTLForm OFF/DESACTIVADO: "%PPD_Form=0"
+*NTLForm ON/Superposición una cara: "%PPD_Form=1"
+*NTLForm Front/Superposición doble cara - Cara de arriba: "%PPD_Form=2"
+*NTLForm Back/Superposición doble cara - Cara de abajo: "%PPD_Form=3"
+*NTLForm SingleAndBothF/Superposición una+doble cara - Cara de arriba: "%PPD_Form=4"
+*NTLForm SingleAndBothB/Superposición una+doble cara - Cara de abajo: "%PPD_Form=5"
+*?NTLForm: "
+  (Form ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+   dup (0) eq { pop (OFF) } {
+    dup (1) eq { pop (ON) } {
+     dup (2) eq { pop (Front) } {
+      dup (3) eq { pop (Back) } {
+        pop (OFF)
+      } ifelse
+     } ifelse
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLForm
+
+*OpenUI *NTLFormNum/Lista de formulario: PickOne
+*OrderDependency: 32.0 AnySetup *NTLFormNum
+*DefaultNTLFormNum: 1
+*NTLFormNum 1: "%PPD_FormNum=1"
+*NTLFormNum 2: "%PPD_FormNum=2"
+*NTLFormNum 3: "%PPD_FormNum=3"
+*NTLFormNum 4: "%PPD_FormNum=4"
+*NTLFormNum 5: "%PPD_FormNum=5"
+*NTLFormNum 6: "%PPD_FormNum=6"
+*NTLFormNum 7: "%PPD_FormNum=7"
+*NTLFormNum 8: "%PPD_FormNum=8"
+*NTLFormNum 9: "%PPD_FormNum=9"
+*NTLFormNum 10: "%PPD_FormNum=10"
+*?NTLFormNum: "
+  (FormNum ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  ="
+*End
+*CloseUI: *NTLFormNum
+
+*OpenUI *NTLFormIndividualSpec/Especificar parte delant. y trasera respecivamente: Boolean
+*OrderDependency: 32.5 AnySetup *NTLFormIndividualSpec
+*DefaultNTLFormIndividualSpec: False
+*NTLFormIndividualSpec False/OFF: "%PPD_FormIndividualSpec=0"
+*NTLFormIndividualSpec True/ON: "%PPD_FormIndividualSpec=1"
+*?NTLFormIndividualSpec: "(False) ="
+*CloseUI: *NTLFormIndividualSpec
+
+*OpenUI *NTLImageMode/Imagen original: PickOne
+*OrderDependency: 33.0 AnySetup *NTLImageMode
+*DefaultNTLImageMode: Photo
+*NTLImageMode Normal/Prioridad texto: "%PPD_ImageMode=0"
+*NTLImageMode Photo/Prioridad fotografía: "%PPD_ImageMode=1"
+*?NTLImageMode: "
+  (ImageMode ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (Normal) } {
+   dup (1) eq { pop (Photo) } {
+        pop (Normal)
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLImageMode
+
+*OpenUI *NTLQueSelect/Modo ejecución: PickOne
+*OrderDependency: 34.0 AnySetup *NTLQueSelect
+*DefaultNTLQueSelect: Direct0
+*NTLQueSelect Direct0/Impresión directa - Configuración controlador impresora: "%PPD_Que=Direct0"
+*NTLQueSelect Direct1/Impresión directa - Registro 1: "%PPD_Que=Direct1"
+*NTLQueSelect Direct2/Impresión directa - Registro 2: "%PPD_Que=Direct2"
+*NTLQueSelect Direct3/Impresión directa - Registro 3: "%PPD_Que=Direct3"
+*NTLQueSelect Direct4/Impresión directa - Registro 4: "%PPD_Que=Direct4"
+*NTLQueSelect Direct5/Impresión directa - Registro 5: "%PPD_Que=Direct5"
+*NTLQueSelect Direct6/Impresión directa - Registro 6: "%PPD_Que=Direct6"
+*NTLQueSelect Direct7/Impresión directa - Registro 7: "%PPD_Que=Direct7"
+*NTLQueSelect Direct8/Impresión directa - Registro 8: "%PPD_Que=Direct8"
+*NTLQueSelect Direct9/Impresión directa - Registro 9: "%PPD_Que=Direct9"
+*NTLQueSelect Hold0/Guardar - Carpeta 0: "%PPD_Que=Hold0"
+*NTLQueSelect Hold1/Guardar - Carpeta 1: "%PPD_Que=Hold1"
+*NTLQueSelect Hold2/Guardar - Carpeta 2: "%PPD_Que=Hold2"
+*NTLQueSelect Hold3/Guardar - Carpeta 3: "%PPD_Que=Hold3"
+*NTLQueSelect Hold4/Guardar - Carpeta 4: "%PPD_Que=Hold4"
+*NTLQueSelect Hold5/Guardar - Carpeta 5: "%PPD_Que=Hold5"
+*NTLQueSelect Hold6/Guardar - Carpeta 6: "%PPD_Que=Hold6"
+*NTLQueSelect Hold7/Guardar - Carpeta 7: "%PPD_Que=Hold7"
+*NTLQueSelect Hold8/Guardar - Carpeta 8: "%PPD_Que=Hold8"
+*NTLQueSelect Hold9/Guardar - Carpeta 9: "%PPD_Que=Hold9"
+*NTLQueSelect Form/Formulario: "%PPD_Que=Form"
+*NTLQueSelect Archive0/Archive0: "%PPD_Que=Archive0"
+*NTLQueSelect Archive1/Archive1: "%PPD_Que=Archive1"
+*NTLQueSelect Archive2/Archive2: "%PPD_Que=Archive2"
+*NTLQueSelect Archive3/Archive3: "%PPD_Que=Archive3"
+*NTLQueSelect Archive4/Archive4: "%PPD_Que=Archive4"
+*NTLQueSelect Archive5/Archive5: "%PPD_Que=Archive5"
+*NTLQueSelect Archive6/Archive6: "%PPD_Que=Archive6"
+*NTLQueSelect Archive7/Archive7: "%PPD_Que=Archive7"
+*NTLQueSelect Archive8/Archive8: "%PPD_Que=Archive8"
+*NTLQueSelect Archive9/Archive9: "%PPD_Que=Archive9"
+*?NTLQueSelect: "(Direct0) ="
+*CloseUI: *NTLQueSelect
+
+*% ========== Layout Setting ===========================================
+
+*OpenUI *NTLLayout/Ubicación papel: PickOne
+*OrderDependency: 41.0 AnySetup *NTLLayout
+*DefaultNTLLayout: None
+*NTLLayout None/DESACTIVADO: "
+%PPD_Layout=0
+%PPD_LayoutNum=1
+"
+*End
+*NTLLayout Copy/Multi-arriba: "
+%PPD_Layout=1
+"
+*End
+*NTLLayout Page/Multi-arriba: "
+%PPD_Layout=2
+"
+*End
+*NTLLayout Book/Folleto: "
+%PPD_Layout=3
+%PPD_LayoutNum=2
+"
+*End
+*NTLLayout Fold/Pliego: "
+%PPD_Layout=4
+%PPD_LayoutNum=4
+"
+*End
+*?NTLLayout: "
+  (Layout ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (None) } {
+   dup (1) eq { pop (Copy) } {
+    dup (2) eq { pop (Page) } {
+     dup (3) eq { pop (Copy) } {
+      dup (4) eq { pop (Fold) } {
+        pop (None)
+      } ifelse
+     } ifelse
+    } ifelse
+   } ifelse
+  } ifelse
+  ="
+*End
+*CloseUI: *NTLLayout
+
+*OpenUI *NTLLayoutNum/Paginas por hoja: PickOne
+*OrderDependency: 40.0 AnySetup *NTLLayoutNum
+*DefaultNTLLayoutNum: 2
+*NTLLayoutNum 2/2 páginas: "%PPD_LayoutNum=2"
+*NTLLayoutNum 4/4 páginas: "%PPD_LayoutNum=4"
+*NTLLayoutNum 8/8 páginas: "%PPD_LayoutNum=8"
+*NTLLayoutNum 16/16 páginas: "%PPD_LayoutNum=16"
+*?NTLLayoutNum: "
+  (LayoutNum ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+   dup (2) eq { pop (2) } {
+    dup (4) eq { pop (4) } {
+     dup (8) eq { pop (8) } {
+      dup (16) eq { pop (16) } {
+        pop (2)
+      } ifelse
+     } ifelse
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLLayoutNum
+
+*OpenUI *NTLPageOrder1/Orden páginas2: PickOne
+*OrderDependency: 42.0 AnySetup *NTLPageOrder1
+*DefaultNTLPageOrder1: 0
+*NTLPageOrder1 0/DESACTIVADO: "%PPD_PageOrder1=0"
+*NTLPageOrder1 1/Orden inverso (de derecha a izquierda): "%PPD_PageOrder1=1"
+*?NTLPageOrder1: "
+  (PageOrder1 ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (0) } {
+   dup (1) eq { pop (1) } {
+        pop (0)
+   } ifelse
+  } ifelse
+  ="
+*End
+*CloseUI: *NTLPageOrder1
+
+*OpenUI *NTLPageOrder2/Orden páginas: PickOne
+*OrderDependency: 43.0 AnySetup *NTLPageOrder2
+*DefaultNTLPageOrder2: 1
+*NTLPageOrder2 0/Paisaje: "%PPD_PageOrder2=0"
+*NTLPageOrder2 1/Retrato: "%PPD_PageOrder2=1"
+*?NTLPageOrder2: "
+  (PageOrder2 ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (0) } {
+   dup (1) eq { pop (1) } {
+        pop (0)
+   } ifelse
+  } ifelse
+  ="
+*End
+*CloseUI: *NTLPageOrder2
+
+*OpenUI *NTLPrintOrder/Cara impresión: PickOne
+*OrderDependency: 43.5 AnySetup *NTLPrintOrder
+*DefaultNTLPrintOrder: Auto
+*NTLPrintOrder Auto/Automática: "%PPD_PrintOrder=0"
+*NTLPrintOrder FaceDown/Boca abajo: "%PPD_PrintOrder=1"
+*?NTLPrintOrder: "(Auto) ="
+*CloseUI: *NTLPrintOrder
+
+*% ========== Paper Setting ===========================================
+
+*OpenUI *PageSize/Tamaño papel salida: PickOne
+*OrderDependency: 65.0 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize A3W: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [896 1304] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A3W
+%PPD_PageSize=A3W
+"
+*End
+*PageSize A3: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [842 1191] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A3
+%PPD_PageSize=A3
+"
+*End
+*PageSize B4: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [729 1032] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=B4
+%PPD_PageSize=B4
+"
+*End
+*PageSize A4: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [595 842] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A4
+%PPD_PageSize=A4
+"
+*End
+*PageSize B5: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [516 729] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=B5
+%PPD_PageSize=B5
+"
+*End
+*PageSize A5: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [420 595] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A5
+%PPD_PageSize=A5
+"
+*End
+*PageSize B6: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [363 516] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=B6
+%PPD_PageSize=B6
+"
+*End
+*PageSize Post/Tarjeta postal: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [284 419] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Post
+%PPD_PageSize=Post
+"
+*End
+*PageSize Kaku0/Sobre 1: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [813.5 1083] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku0
+%PPD_PageSize=Kaku0
+"
+*End
+*PageSize Kaku1/Sobre 2: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [765 1083] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku1
+%PPD_PageSize=Kaku1
+"
+*End
+*PageSize Kaku2/Sobre 3: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [680 941] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku2
+%PPD_PageSize=Kaku2
+"
+*End
+*PageSize Kaku3/Sobre 4: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 785] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku3
+%PPD_PageSize=Kaku3
+"
+*End
+*PageSize Long3/Sobre 5: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [340 666] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Long3
+%PPD_PageSize=Long3
+"
+*End
+*PageSize Long4/Sobre 6: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [255 581] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Long4
+%PPD_PageSize=Long4
+"
+*End
+*PageSize Tabloid/Formato tabloide: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [793 1224] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Tabloid
+%PPD_PageSize=Tabloid
+"
+*End
+*PageSize Legal/Legal: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 1008] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Legal
+%PPD_PageSize=Legal
+"
+*End
+*PageSize Letter/Carta: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 793] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Letter
+%PPD_PageSize=Letter
+"
+*End
+*PageSize Foolscap/Folio (Foolscap): "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 964] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Foolscap
+%PPD_PageSize=Foolscap
+"
+*End
+*PageSize Statement/Declaración: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [396 612] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Statement
+%PPD_PageSize=Statement
+"
+*End
+*?PageSize: "
+ currentpagedevice /PageSize get aload aload pop gt {exch} if
+ (Unknown) <<
+   /A3W [896 1304]
+   /A3 [842 1191]
+   /B4 [729 1032]
+   /A4 [595 842]
+   /B5 [516 729]
+   /A5 [420 595]
+   /B6 [363  516]
+   /Post [284  419]
+   /Kaku0 [813.5 1083]
+   /Kaku1 [765 1083]
+   /Kaku2 [680 941]
+   /Kaku3 [612 785]
+   /Long3 [340 666]
+   /Long4 [255 581]
+   /Tabloid [793 1224]
+   /Legal [612 1008]
+   /Letter [612 793]
+   /Foolscap [612 964]
+   /Statement [396  612]
+ >>
+ { aload aload pop gt {exch} if 4
+   index sub abs 5 le exch 5 index sub abs 5 le and {exch} if pop
+ } bind forall = pop pop"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 66.0 AnySetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion A3W: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [896 1304] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A3W
+%PPD_PageSize=A3W
+"
+*End
+*PageRegion A3: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [842 1191] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A3
+%PPD_PageSize=A3
+"
+*End
+*PageRegion B4: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [729 1032] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=B4
+%PPD_PageSize=B4
+"
+*End
+*PageRegion A4: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [595 842] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A4
+%PPD_PageSize=A4
+"
+*End
+*PageRegion B5: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [516 729] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=B5
+%PPD_PageSize=B5
+"
+*End
+*PageRegion A5: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [420 595] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=A5
+%PPD_PageSize=A5
+"
+*End
+*PageRegion B6: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [363 516] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=B6
+%PPD_PageSize=B6
+"
+*End
+*PageRegion Post/Tarjeta postal: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [284 419] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Post
+%PPD_PageSize=Post
+"
+*End
+*PageRegion Kaku0/Sobre 1: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [813.5 1083] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku0
+%PPD_PageSize=Kaku0
+"
+*End
+*PageRegion Kaku1/Sobre 2: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [765 1083] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku1
+%PPD_PageSize=Kaku1
+"
+*End
+*PageRegion Kaku2/Sobre 3: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [680 941] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku2
+%PPD_PageSize=Kaku2
+"
+*End
+*PageRegion Kaku3/Sobre 4: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 785] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Kaku3
+%PPD_PageSize=Kaku3
+"
+*End
+*PageRegion Long3/Sobre 5: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [340 666] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Long3
+%PPD_PageSize=Long3
+"
+*End
+*PageRegion Long4/Sobre 6: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [255 581] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Long4
+%PPD_PageSize=Long4
+"
+*End
+*PageRegion Tabloid/Formato tabloide: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [793 1224] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Tabloid
+%PPD_PageSize=Tabloid
+"
+*End
+*PageRegion Legal/Legal: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 1008] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Legal
+%PPD_PageSize=Legal
+"
+*End
+*PageRegion Letter/Carta: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 793] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Letter
+%PPD_PageSize=Letter
+"
+*End
+*PageRegion Foolscap/Folio (Foolscap): "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [612 964] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Foolscap
+%PPD_PageSize=Foolscap
+"
+*End
+*PageRegion Statement/Declaración: "
+NTL_PPD_PAGESIZE_ON
+{	<< /PageSize [396 612] /ImagingBBox null >> setpagedevice
+} if
+%PPD_SourceSize=Statement
+%PPD_PageSize=Statement
+"
+*End
+*CloseUI: *PageRegion
+
+*% ========== 5.15 Information About Media Sizes ============================================
+
+*DefaultImageableArea: A4
+*ImageableArea A3W: "14 14 882 1290"
+*ImageableArea A3: "14 14 828 1177"
+*ImageableArea B4: "14 14 715 1018"
+*ImageableArea A4: "14 14 581 828"
+*ImageableArea B5: "14 14 502 715"
+*ImageableArea A5: "14 14 406 581"
+*ImageableArea B6: "14 14 349 502"
+*ImageableArea Post/Tarjeta postal: "14 14 270 405"
+*ImageableArea Kaku0/Sobre 1: "14 14 799.5 1069"
+*ImageableArea Kaku1/Sobre 2: "14 14 751 1069"
+*ImageableArea Kaku2/Sobre 3: "14 14 666 927"
+*ImageableArea Kaku3/Sobre 4: "14 14 598 771"
+*ImageableArea Long3/Sobre 5: "14 14 326 652"
+*ImageableArea Long4/Sobre 6: "14 14 241 567"
+*ImageableArea Tabloid/Formato tabloide: "14 14 779 1210"
+*ImageableArea Legal/Legal: "14 14 598 994"
+*ImageableArea Letter/Carta: "14 14 598 779"
+*ImageableArea Foolscap/Folio (Foolscap): "14 14 598 950"
+*ImageableArea Statement/Declaración: "14 14 382 598"
+*?ImageableArea: "
+  newpath clippath pathbbox 4 -2 roll
+  exch 2 {10000 mul ceiling 10000 div dup 0 lt {pop 0.0} if 128 string cvs print ( ) print} repeat
+  exch 2 {10000 mul floor   10000 div dup 0 lt {pop 0.0} if 128 string cvs print ( ) print} repeat
+  (\n) print"
+*End
+
+*DefaultPaperDimension: A4
+*PaperDimension A3W: "896 1304"
+*PaperDimension A3: "842 1191"
+*PaperDimension B4: "729 1032"
+*PaperDimension A4: "595 842"
+*PaperDimension B5: "516 729"
+*PaperDimension A5: "420 595"
+*PaperDimension B6: "363 516"
+*PaperDimension Post/Tarjeta postal: "284 419"
+*PaperDimension Kaku0/Sobre 1: "813.5 1083"
+*PaperDimension Kaku1/Sobre 2: "765 1083"
+*PaperDimension Kaku2/Sobre 3: "680 941"
+*PaperDimension Kaku3/Sobre 4: "612 785"
+*PaperDimension Long3/Sobre 5: "340 666"
+*PaperDimension Long4/Sobre 6: "255 581"
+*PaperDimension Tabloid/Formato tabloide: "793 1224"
+*PaperDimension Legal/Legal: "612 1008"
+*PaperDimension Letter/Carta: "612 793"
+*PaperDimension Foolscap/Folio (Foolscap): "612 964"
+*PaperDimension Statement/Declaración: "396 612"
+
+*% ========== 5.16 CustomPageSizes ==========================================================
+*% Custom Page Sizes ===================
+*MaxMediaWidth: "907"
+*MaxMediaHeight: "1303"
+*HWMargins: 14 14 14 14
+*ParamCustomPageSize Width:  1 points 283 907
+*ParamCustomPageSize Height: 2 points 419.5 1303
+*ParamCustomPageSize WidthOffset: 4 points 0 0
+*ParamCustomPageSize HeightOffset: 5 points 0 0
+*ParamCustomPageSize Orientation: 3 int 0 1
+*CustomPageSize True: "
+%PPD_SourceSize=Custom
+%PPD_PageSize=Custom
+NTL_PPD_PAGESIZE_ON
+{	pop pop 2 mod 0 eq { exch } if << /PageSize [ 5 -2 roll ] /ImagingBBox null >> setpagedevice
+}
+{	pop pop pop pop pop
+}
+ifelse
+"
+*End
+
+*% ========== 5.19 Imagesetter Features =====================================================
+
+*OpenUI *NTLOrientation/Orientación: PickOne
+*OrderDependency: 58.0 AnySetup *NTLOrientation
+*DefaultNTLOrientation: Portrait
+*NTLOrientation Portrait/Retrato: "%PPD_Orientation=0"
+*NTLOrientation Landscape/Paisaje: "%PPD_Orientation=1"
+*?NTLOrientation: "
+  (Orientation ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (Portrait) } {
+   dup (90) eq { pop (Landscape) } {
+        pop (Portrait)
+    } ifelse
+   } ifelse
+  ="
+*End
+*CloseUI: *NTLOrientation
+
+*% ========== Color Mode ====================================================
+
+*OpenUI *TL_ColorSimulation/Concordancia color automática: PickOne
+*OrderDependency: 67.0 AnySetup *TL_ColorSimulation
+*DefaultTL_ColorSimulation: Simulate
+*TL_ColorSimulation None/DESACTIVADO: "
+%PPD_ColorSimulation=0
+% for Acrobat
+userdict /PDFVars known {
+ PDFVars /docSetupDone get {
+  PDFVars /_defaultcolortransfer get aload pop setcolortransfer
+  PDFVars /InitAll [ PDFVars /InitAll get /exec cvx { PDFVars /_defaultcolortransfer get aload pop setcolortransfer } /exec cvx ] cvx put
+ } if
+} if
+"
+*End
+*TL_ColorSimulation Simulate/ACTIVADO: "
+%PPD_ColorSimulation=1
+% for Acrobat
+userdict /PDFVars known {
+ PDFVars /docSetupDone get {
+  PDFVars /_defaultcolortransfer get aload pop setcolortransfer
+  PDFVars /InitAll [ PDFVars /InitAll get /exec cvx { PDFVars /_defaultcolortransfer get aload pop setcolortransfer } /exec cvx ] cvx put
+ } if
+} if
+"
+*End
+*CloseUI: *TL_ColorSimulation
+
+*% ========== Drop Mode ====================================================
+
+*OpenUI *NTLDropMax/Número máximo de puntos: PickOne
+*OrderDependency: 68.0 AnySetup *NTLDropMax
+*DefaultNTLDropMax: Auto
+*NTLDropMax Auto/Auto: "%PPD_DropMax=0"
+*NTLDropMax 1/1: "%PPD_DropMax=1"
+*NTLDropMax 2/2: "%PPD_DropMax=2"
+*NTLDropMax 3/3: "%PPD_DropMax=3"
+*NTLDropMax 4/4: "%PPD_DropMax=4"
+*NTLDropMax 5/5: "%PPD_DropMax=5"
+*NTLDropMax 6/6: "%PPD_DropMax=6"
+*NTLDropMax 7/7: "%PPD_DropMax=7"
+*?NTLDropMax: "
+  (DropMaxMode ?\0) 16 string /CPSI /ProcSet findresource
+  /externalcommand get exec pop
+  dup (0) eq { pop (Auto) } {
+   dup (1) eq { pop (1) } {
+    dup (2) eq { pop (2) } {
+     dup (3) eq { pop (3) } {
+      dup (4) eq { pop (4) } {
+       dup (5) eq { pop (5) } {
+        dup (6) eq { pop (6) } {
+         dup (7) eq { pop (7) } {
+            pop (Auto)
+         } ifelse
+        } ifelse
+       } ifelse
+      } ifelse
+     } ifelse
+    } ifelse
+   } ifelse
+  } ifelse
+  ="
+*End
+*CloseUI: *NTLDropMax
+
+*% ========== 5.xx Finisher Features ======================================================== 
+
+*OpenUI *Finisher: PickOne
+*OrderDependency: 69.0 AnySetup *Finisher
+*DefaultFinisher: None
+*Finisher None: ""
+*CloseUI: *Finisher
+
+*OpenUI *NTLCoverFront/Poner cubierta delantera: Boolean
+*OrderDependency: 70.0 AnySetup *NTLCoverFront
+*DefaultNTLCoverFront: False
+*NTLCoverFront False/DESACTIVADO: "%PPD_CoverFront=0"
+*NTLCoverFront True/ACTIVADO: "%PPD_CoverFront=1"
+*?NTLCoverFront: "(False) ="
+*CloseUI: *NTLCoverFront
+
+*OpenUI *NTLCoverFrontTray/Selecc.bandej.cubierta delante: PickOne
+*OrderDependency: 70.5 AnySetup *NTLCoverFrontTray
+*DefaultNTLCoverFrontTray: CoverTray
+*NTLCoverFrontTray CoverTray/Bandeja hoja cubierta: "%PPD_CoverFrontTray=0"
+*NTLCoverFrontTray AssortTray/Bandeja interposición: "%PPD_CoverFrontTray=1"
+*?NTLCoverFrontTray: "(CoverTray) ="
+*CloseUI: *NTLCoverFrontTray
+
+*OpenUI *NTLCoverBack/Poner cubierta trasera: Boolean
+*OrderDependency: 71.0 AnySetup *NTLCoverBack
+*DefaultNTLCoverBack: False
+*NTLCoverBack False/DESACTIVADO: "%PPD_CoverBack=0"
+*NTLCoverBack True/ACTIVADO: "%PPD_CoverBack=1"
+*?NTLConverBack: "(False) ="
+*CloseUI: *NTLCoverBack
+
+*OpenUI *NTLCoverBackTray/Selecc.bandej.cubierta trasera: PickOne
+*OrderDependency: 71.5 AnySetup *NTLCoverBackTray
+*DefaultNTLCoverBackTray: CoverTray
+*NTLCoverBackTray CoverTray/Bandeja hoja cubierta: "%PPD_CoverBackTray=0"
+*NTLCoverBackTray AssortTray/Bandeja interposición: "%PPD_CoverBackTray=1"
+*?NTLCoverBackTray: "(CoverTray) ="
+*CloseUI: *NTLCoverBackTray
+
+*OpenUI *NTLBooklet/Folleto: PickOne
+*OrderDependency: 72.0 AnySetup *NTLBooklet
+*DefaultNTLBooklet: OFF
+*NTLBooklet OFF/Desactivado: "%PPD_Booklet=0"
+*NTLBooklet DoubleStaple/Plegar y grapar: "%PPD_Booklet=1"
+*NTLBooklet DoubleFold/Plegar: "%PPD_Booklet=2"
+*?NTLBooklet: "(OFF) ="
+*CloseUI: *NTLBooklet
+
+*OpenUI *NTLSeparate/Separar tomos: PickOne
+*OrderDependency: 73.0 AnySetup *NTLSeparate
+*DefaultNTLSeparate: OFF
+*NTLSeparate OFF/Desactivado: "%PPD_BookletSeparate=0"
+*NTLSeparate Auto/Automática: "%PPD_BookletSeparate=1"
+*NTLSeparate Copy/Nú.-Hojas: "%PPD_BookletSeparate=2"
+*?NTLSeparate: "(OFF) ="
+*CloseUI: *NTLSeparate
+
+*OpenUI *NTLBookletBindMargin/Poner margen encuader. central: Boolean
+*OrderDependency: 74.0 AnySetup *NTLBookletBindMargin
+*DefaultNTLBookletBindMargin: False
+*NTLBookletBindMargin False/DESACTIVADO: "%PPD_BookletBindMargin=0"
+*NTLBookletBindMargin True/ACTIVADO: "%PPD_BookletBindMargin=1"
+*?NTLBookletBindMargin: "(False) ="
+*CloseUI: *NTLBookletBindMargin
+
+*OpenUI *NTLBookletMatchPaper/Margen encu. Central Auto reducir: Boolean
+*OrderDependency: 75.0 AnySetup *NTLBookletMatchPaper
+*DefaultNTLBookletMatchPaper: False
+*NTLBookletMatchPaper False/DESACTIVADO: "%PPD_BookletMatchPaper=0"
+*NTLBookletMatchPaper True/ACTIVADO: "%PPD_BookletMatchPaper=1"
+*?NTLBookletMatchPaper: "(False) ="
+*CloseUI: *NTLBookletMatchPaper
+
+*OpenUI *NTLBookletCoverPrint/Imp.Cubiert.Separado: PickOne
+*OrderDependency: 76.0 AnySetup *NTLBookletCoverPrint
+*DefaultNTLBookletCoverPrint: OFF
+*NTLBookletCoverPrint OFF/Desactivado: "%PPD_BookletCoverPrint=0"
+*NTLBookletCoverPrint CoverOnly/Imp. Sólo Cubierta: "%PPD_BookletCoverPrint=1"
+*NTLBookletCoverPrint Other/Imp.Excepto Cubierta: "%PPD_BookletCoverPrint=2"
+*?NTLBookletCoverPrint: "(OFF) ="
+*CloseUI: *NTLBookletCoverPrint
+
+*OpenUI *NTLBookletArchive/Guardar excep.cubierta archivo: Boolean
+*OrderDependency: 77.0 AnySetup *NTLBookletArchive
+*DefaultNTLBookletArchive: False
+*NTLBookletArchive False/DESACTIVADO: "%PPD_BookletArchive=0"
+*NTLBookletArchive True/ACTIVADO: "%PPD_BookletArchive=1"
+*?NTLBookletArchive: "(False) ="
+*CloseUI: *NTLBookletArchive
+
+*OpenUI *NTLStaple/Grapadora: PickOne
+*OrderDependency: 78.0 AnySetup *NTLStaple
+*DefaultNTLStaple: OFF
+*NTLStaple OFF/Desactivado: "%PPD_Staple=0"
+*NTLStaple LDouble/2 partes, izquierda: "%PPD_Staple=1"
+*NTLStaple LTSingle/1 P.superior izquierda: "%PPD_Staple=2"
+*NTLStaple TDoulbe/2 P. superior: "%PPD_Staple=3"
+*NTLStaple TLSingle/1 P.superior izquierda: "%PPD_Staple=4"
+*NTLStaple TRSingle/1 P.superior derecha: "%PPD_Staple=5"
+*NTLStaple RDouble/2 P. Derecha: "%PPD_Staple=6"
+*NTLStaple RTSingle/1 P. superior derecha: "%PPD_Staple=7"
+*?NTLStaple: "(OFF) ="
+*CloseUI: *NTLStaple
+
+*OpenUI *NTLPunch/Perforado: PickOne
+*OrderDependency: 79.0 AnySetup *NTLPunch
+*DefaultNTLPunch: OFF
+*NTLPunch OFF/Desactivado: "%PPD_Punch=0"
+*NTLPunch Left/Izquierda: "%PPD_Punch=1"
+*NTLPunch Top/Parte superior: "%PPD_Punch=2"
+*NTLPunch Right/Derecha: "%PPD_Punch=3"
+*?NTLPunch: "(OFF) ="
+*CloseUI: *NTLPunch
+
+*OpenUI *NTLSPBindMargin/Poner margen encuadernación: Boolean
+*OrderDependency: 80.0 AnySetup *NTLSPBindMargin
+*DefaultNTLSPBindMargin: False
+*NTLSPBindMargin False/DESACTIVADO: "%PPD_SPBindMargin=0"
+*NTLSPBindMargin True/ACTIVADO: "%PPD_SPBindMargin=1"
+*?NTLSPBindMargin: "(False) ="
+*CloseUI: *NTLSPBindMargin
+
+*OpenUI *NTLSPMatchPaper/Margen.Encuadernació Auto reducir: Boolean
+*OrderDependency: 81.0 AnySetup *NTLSPMatchPaper
+*DefaultNTSPMatchPaper: False
+*NTLSPMatchPaper False/DESACTIVADO: "%PPD_SPMatchPaper=0"
+*NTLSPMatchPaper True/ACTIVADO: "%PPD_SPMatchPaper=1"
+*?NTLSPMatchPaper: "(False) ="
+*CloseUI: *NTLSPMatchPaper
+
+*OpenUI *NTLPunchHole/Orificio Perforación: PickOne
+*OrderDependency: 82.0 AnySetup *NTLPunchHole
+*DefaultNTLPunchHole: 2
+*NTLPunchHole 2/2 orificios: "%PPD_PunchHole=2"
+*NTLPunchHole 3/3 orificios: "%PPD_PunchHole=3"
+*NTLPunchHole 4/4 orificios: "%PPD_PunchHole=4"
+*?NTLPunchHole: "(2) ="
+*CloseUI: *NTLPunchHole
+
+*OpenUI *NTLPaperFold/Papel doblado: PickOne
+*OrderDependency: 83.0 AnySetup *NTLPaperFold
+*DefaultNTLPaperFold: OFF
+*NTLPaperFold OFF/Desactivado: "%PPD_PaperFold=0"
+*NTLPaperFold OTriple/Plegado 3 exterior: "%PPD_PaperFold=1"
+*NTLPaperFold ITriple/Plegado 3 interior: "%PPD_PaperFold=2"
+*NTLPaperFold ZFold/Plegado Z: "%PPD_PaperFold=3"
+*NTLPaperFold DoubleFold/Plegado en 2: "%PPD_PaperFold=4"
+*?NTLPaperFold : "(OFF) ="
+*CloseUI: *NTLPaperFold
+
+*OpenUI *NTLFoldDirection/Dirección plegado: PickOne
+*OrderDependency: 84.0 AnySetup *NTLFoldDirection
+*DefaultNTLFoldDirection: Inside
+*NTLFoldDirection Inside/Impresión interior: "%PPD_FoldDirection=0"
+*NTLFoldDirection Outside/Impresión exterior: "%PPD_FoldDirection=1"
+*?NTLFoldDirection: "(Inside) ="
+*CloseUI: *NTLFoldDirection
+
+*OpenUI *NTLBindDirection/Direcc. encuadernado: PickOne
+*OrderDependency: 85.0 AnySetup *NTLBindDirection
+*DefaultNTLBindDirection: Left
+*NTLBindDirection Left/Encuadernado izquier: "%PPD_BindDirection=0"
+*NTLBindDirection Right/Encuadernado derecha: "%PPD_BindDirection=1"
+*?NTLBindDirection: "(Left) ="
+*CloseUI: *NTLBindDirection
+
+*OpenUI *NTLOutput/Bandeja de salida: PickOne
+*OrderDependency: 86.0 AnySetup *NTLOutput
+*DefaultNTLOutput: None
+*NTLOutput None/Automática: "%PPD_OutputTray=0"
+*NTLOutput Stack/Bandeja apilamiento: "%PPD_OutputTray=1"
+*?NTLOutput: "(None) ="
+*CloseUI: *NTLOutput
+
+*OpenUI *NTLOffset/Salida offset: PickOne
+*OrderDependency: 87.0 AnySetup *NTLOffset
+*DefaultNTLOffset: OFF
+*NTLOffset OFF/Desactivado: "%PPD_OffsetPaper=0"
+*NTLOffset ON/Activado: "%PPD_OffsetPaper=1"
+*?NTLOffset: "(OFF) ="
+*CloseUI: *NTLOffset
+
+*OpenUI *NTLMixedPaperSize/Orig. tamaños comb.: Boolean
+*OrderDependency: 88.0 AnySetup *NTLMixedPaperSize
+*DefaultNTLMixedPaperSize: False
+*NTLMixedPaperSize False/OFF: "%PPD_MixedPaperSize=0"
+*NTLMixedPaperSize True/ON: "
+%PPD_MixedPaperSize=1
+userdict /NTLMixedPaperSizeProc known
+{	NTLMixedPaperSizeProc
+}
+if
+"
+*End
+*?NTLMixedPaperSize: "(False) ="
+*CloseUI: *NTLMixedPaperSize
+
+*% ================== Security Print Feature ===============================================
+
+*OpenUI *NTLUseSecurityPrint/Usar función Impresión de seguridad: Boolean
+*OrderDependency: 89.0 AnySetup *NTLUseSecurityPrint
+*DefaultNTLUseSecurityPrint: False
+*NTLUseSecurityPrint False/OFF: "%PPD_UseSecurityPrint=0"
+*NTLUseSecurityPrint True/ON: "%PPD_UseSecurityPrint=1"
+*?NTLUseSecurityPrint: "(False) ="
+*CloseUI: *NTLUseSecurityPrint
+
+*OpenUI *NTLNotDispJobName/Nombre tarea no indicado en el gestor de tareas.: Boolean
+*OrderDependency: 90.0 AnySetup *NTLNotDispJobName
+*DefaultNTLNotDispJobName: False
+*NTLNotDispJobName False/OFF: "%PPD_NotDispJobName=0"
+*NTLNotDispJobName True/ON: "%PPD_NotDispJobName=1"
+*?NTLNotDispJobName: "(False) ="
+*CloseUI: *NTLNotDispJobName
+
+*% =========================================================================================
+
+*OpenUI *Duplex: PickOne
+*OrderDependency: 199.0 AnySetup *Duplex
+*DefaultDupex: None
+*Duplex None: ""
+*CloseUI: *Duplex
+
+*OpenUI *NTLDuplex/Imprimiendo ambas caras (dúplex): PickOne
+*OrderDependency: 199.5 PageSetup *NTLDuplex
+*DefaultNTLDuplex: DuplexNoTumble
+*NTLDuplex None/DESACTIVADO: "
+NTLLastSetPageDevice
+%PPD_Duplex=0
+%PPD_end
+"
+*End
+*NTLDuplex DuplexNoTumble/Encuadernación lado largo: "
+NTLLastSetPageDevice
+%PPD_Duplex=1
+%PPD_end
+"
+*End
+*NTLDuplex DuplexTumble/Encuadernación lado corto: "
+NTLLastSetPageDevice
+%PPD_Duplex=2
+%PPD_end
+"
+*End
+*?NTLDuplex: "
+  currentpagedevice dup /Duplex get {
+    /Tumble get {(DuplexTumble)} {(DuplexNoTumble)} ifelse
+  }{pop (None)} ifelse =
+"
+*End
+*CloseUI: *NTLDuplex
+
+*% ========== UIConstraints for Sorter and Staple ===========================================
+
+*% ========== Color Mode ====================================================
+
+*% ========== 5.20 Font Related Keywords ====================================================
+
+*Font AdobeSansMM: Standard "(001.002)" Standard Disk
+*Font AdobeSerifMM: Standard "(001.003)" Standard Disk
+*Font AlbertusMT: Standard "(001.001)" Standard Disk
+*Font AlbertusMT-Italic: Standard "(001.001)" Standard Disk
+*Font AlbertusMT-Light: Standard "(001.001)" Standard Disk
+*Font AntiqueOlive-Bold: Standard "(001.002)" Standard Disk
+*Font AntiqueOlive-Compact: Standard "(001.002)" Standard Disk
+*Font AntiqueOlive-Italic: Standard "(001.002)" Standard Disk
+*Font AntiqueOlive-Roman: Standard "(001.002)" Standard Disk
+*Font Apple-Chancery: Standard "(3.0)" Standard Disk
+*Font Arial-BoldItalicMT: Standard "(001.003)" Standard Disk
+*Font Arial-BoldMT: Standard "(001.003)" Standard Disk
+*Font Arial-ItalicMT: Standard "(001.003)" Standard Disk
+*Font ArialMT: Standard "(001.003)" Standard Disk
+*Font AvantGarde-Book: Standard "(003.000)" Standard Disk
+*Font AvantGarde-BookOblique: Standard "(003.000)" Standard Disk
+*Font AvantGarde-Demi: Standard "(003.000)" Standard Disk
+*Font AvantGarde-DemiOblique: Standard "(003.000)" Standard Disk
+*Font Bodoni: Standard "(001.003)" Standard Disk
+*Font Bodoni-Bold: Standard "(001.003)" Standard Disk
+*Font Bodoni-BoldItalic: Standard "(001.003)" Standard Disk
+*Font Bodoni-Italic: Standard "(001.003)" Standard Disk
+*Font Bodoni-Poster: Standard "(001.003)" Standard Disk
+*Font Bodoni-PosterCompressed: Standard "(001.002)" Standard Disk
+*Font Bookman-Demi: Standard "(003.000)" Standard Disk
+*Font Bookman-DemiItalic: Standard "(003.000)" Standard Disk
+*Font Bookman-Light: Standard "(003.000)" Standard Disk
+*Font Bookman-LightItalic: Standard "(003.000)" Standard Disk
+*Font Carta: Special "(001.001)" Special Disk
+*Font Chicago: Standard "(3.0)" Standard Disk
+*Font Clarendon: Standard "(001.002)" Standard Disk
+*Font Clarendon-Bold: Standard "(001.002)" Standard Disk
+*Font Clarendon-Light: Standard "(001.002)" Standard Disk
+*Font CooperBlack: Standard "(001.004)" Standard Disk
+*Font CooperBlack-Italic: Standard "(001.004)" Standard Disk
+*Font Copperplate-ThirtyThreeBC: Standard "(001.003)" Standard Disk
+*Font Copperplate-ThirtyTwoBC: Standard "(001.003)" Standard Disk
+*Font Coronet-Regular: Standard "(001.002)" Standard Disk
+*Font Courier: Standard "(004.000)" Standard Disk
+*Font Courier-Bold: Standard "(004.000)" Standard Disk
+*Font Courier-BoldOblique: Standard "(004.000)" Standard Disk
+*Font Courier-Oblique: Standard "(004.000)" Standard Disk
+*Font Eurostile: Standard "(001.003)" Standard Disk
+*Font Eurostile-Bold: Standard "(001.002)" Standard Disk
+*Font Eurostile-BoldExtendedTwo: Standard "(001.003)" Standard Disk
+*Font Eurostile-ExtendedTwo: Standard "(001.003)" Standard Disk
+*Font Geneva: Standard "(3.0)" Standard Disk
+*Font GillSans: Standard "(001.003)" Standard Disk
+*Font GillSans-Bold: Standard "(001.002)" Standard Disk
+*Font GillSans-BoldCondensed: Standard "(001.002)" Standard Disk
+*Font GillSans-BoldItalic: Standard "(001.003)" Standard Disk
+*Font GillSans-Condensed: Standard "(001.002)" Standard Disk
+*Font GillSans-ExtraBold: Standard "(001.002)" Standard Disk
+*Font GillSans-Italic: Standard "(001.003)" Standard Disk
+*Font GillSans-Light: Standard "(001.002)" Standard Disk
+*Font GillSans-LightItalic: Standard "(001.003)" Standard Disk
+*Font Goudy: Standard "(001.004)" Standard Disk
+*Font Goudy-Bold: Standard "(001.003)" Standard Disk
+*Font Goudy-BoldItalic: Standard "(001.003)" Standard Disk
+*Font Goudy-ExtraBold: Standard "(001.002)" Standard Disk
+*Font Goudy-Italic: Standard "(001.003)" Standard Disk
+*Font Helvetica: Standard "(003.000)" Standard Disk
+*Font Helvetica-Bold: Standard "(003.000)" Standard Disk
+*Font Helvetica-BoldOblique: Standard "(003.000)" Standard Disk
+*Font Helvetica-Condensed: Standard "(003.000)" Standard Disk
+*Font Helvetica-Condensed-Bold: Standard "(003.000)" Standard Disk
+*Font Helvetica-Condensed-BoldObl: Standard "(003.000)" Standard Disk
+*Font Helvetica-Condensed-Oblique: Standard "(003.000)" Standard Disk
+*Font Helvetica-Narrow: Standard "(003.000)" Standard Disk
+*Font Helvetica-Narrow-Bold: Standard "(003.000)" Standard Disk
+*Font Helvetica-Narrow-BoldOblique: Standard "(003.000)" Standard Disk
+*Font Helvetica-Narrow-Oblique: Standard "(003.000)" Standard Disk
+*Font Helvetica-Oblique: Standard "(003.000)" Standard Disk
+*Font HoeflerText-Black: Standard "(1.0)" Standard Disk
+*Font HoeflerText-BlackItalic: Standard "(1.0)" Standard Disk
+*Font HoeflerText-Italic: Standard "(1.0)" Standard Disk
+*Font HoeflerText-Ornaments: Special "(001.001)" Special Disk
+*Font HoeflerText-Regular: Standard "(1.0)" Standard Disk
+*Font JoannaMT: Standard "(001.001)" Standard Disk
+*Font JoannaMT-Bold: Standard "(001.001)" Standard Disk
+*Font JoannaMT-BoldItalic: Standard "(001.001)" Standard Disk
+*Font JoannaMT-Italic: Standard "(001.001)" Standard Disk
+*Font LetterGothic: Standard "(001.005)" Standard Disk
+*Font LetterGothic-Bold: Standard "(001.007)" Standard Disk
+*Font LetterGothic-BoldSlanted: Standard "(001.006)" Standard Disk
+*Font LetterGothic-Slanted: Standard "(001.005)" Standard Disk
+*Font LubalinGraph-Book: Standard "(001.004)" Standard Disk
+*Font LubalinGraph-BookOblique: Standard "(001.004)" Standard Disk
+*Font LubalinGraph-Demi: Standard "(001.004)" Standard Disk
+*Font LubalinGraph-DemiOblique: Standard "(001.004)" Standard Disk
+*Font Marigold: Standard "(001.001)" Standard Disk
+*Font MonaLisa-Recut: Standard "(001.001)" Standard Disk
+*Font Monaco: Standard "(3.0)" Standard Disk
+*Font NewCenturySchlbk-Bold: Standard "(003.000)" Standard Disk
+*Font NewCenturySchlbk-BoldItalic: Standard "(003.000)" Standard Disk
+*Font NewCenturySchlbk-Italic: Standard "(003.000)" Standard Disk
+*Font NewCenturySchlbk-Roman: Standard "(003.000)" Standard Disk
+*Font NewYork: Standard "(001.000)" ExtendedRoman Disk
+*Font Optima: Standard "(001.006)" Standard Disk
+*Font Optima-Bold: Standard "(001.007)" Standard Disk
+*Font Optima-BoldItalic: Standard "(001.001)" Standard Disk
+*Font Optima-Italic: Standard "(001.001)" Standard Disk
+*Font Oxford: Standard "(001.001)" Standard Disk
+*Font Palatino-Bold: Standard "(003.000)" Standard Disk
+*Font Palatino-BoldItalic: Standard "(003.000)" Standard Disk
+*Font Palatino-Italic: Standard "(003.000)" Standard Disk
+*Font Palatino-Roman: Standard "(003.000)" Standard Disk
+*Font StempelGaramond-Bold: Standard "(001.003)" Standard Disk
+*Font StempelGaramond-BoldItalic: Standard "(001.003)" Standard Disk
+*Font StempelGaramond-Italic: Standard "(001.003)" Standard Disk
+*Font StempelGaramond-Roman: Standard "(001.003)" Standard Disk
+*Font Symbol: Special "(001.008)" Special Disk
+*Font Tekton: Standard "(001.002)" Standard Disk
+*Font Times-Bold: Standard "(003.000)" Standard Disk
+*Font Times-BoldItalic: Standard "(003.000)" Standard Disk
+*Font Times-Italic: Standard "(003.000)" Standard Disk
+*Font Times-Roman: Standard "(003.000)" Standard Disk
+*Font TimesNewRomanPS-BoldItalicMT: Standard "(001.003)" Standard Disk
+*Font TimesNewRomanPS-BoldMT: Standard "(001.004)" Standard Disk
+*Font TimesNewRomanPS-ItalicMT: Standard "(001.003)" Standard Disk
+*Font TimesNewRomanPSMT: Standard "(001.003)" Standard Disk
+*Font Univers: Standard "(001.004)" Standard Disk
+*Font Univers-Bold: Standard "(001.004)" Standard Disk
+*Font Univers-BoldExt: Standard "(001.001)" Standard Disk
+*Font Univers-BoldExtObl: Standard "(001.001)" Standard Disk
+*Font Univers-BoldOblique: Standard "(001.004)" Standard Disk
+*Font Univers-Condensed: Standard "(001.003)" Standard Disk
+*Font Univers-CondensedBold: Standard "(001.002)" Standard Disk
+*Font Univers-CondensedBoldOblique: Standard "(001.002)" Standard Disk
+*Font Univers-CondensedOblique: Standard "(001.003)" Standard Disk
+*Font Univers-Extended: Standard "(001.001)" Standard Disk
+*Font Univers-ExtendedObl: Standard "(001.001)" Standard Disk
+*Font Univers-Light: Standard "(001.004)" Standard Disk
+*Font Univers-LightOblique: Standard "(001.004)" Standard Disk
+*Font Univers-Oblique: Standard "(001.004)" Standard Disk
+*Font Wingdings: Special "(001.001)" Special Disk
+*Font Wingdings-Regular: Special "(Version 2.00)" Special Disk
+*Font ZapfChancery-MediumItalic: Standard "(003.000)" Standard Disk
+*Font ZapfDingbats: Special "(002.000)" Special Disk
+
+*DefaultFont: Courier
+
+*?FontQuery: "
+ save
+   { count 1 gt
+      { exch dup 127 string cvs (/) print print (:) print
+        /Font resourcestatus {pop pop (Yes)} {(No)} ifelse =
+      } { exit } ifelse
+   } bind loop
+   (*) = flush
+ restore"
+*End
+
+*?FontList: "
+save
+  (*) {cvn ==} 128 string /Font resourceforall
+  (*) = flush
+restore
+"
+*End
+
+*% ========== 5.21 Printer Messages =========================================================
+
+*% Printer Messages (verbatim from printer):
+*Message: "%%[ exitserver: permanent state may be changed ]%%"
+*Message: "%%[ Flushing: rest of job (to end-of-file) will be ignored ]%%"
+*Message: "\FontName\ not found, using Courier."
+
+*% Status (format: %%[ status: <one of these> ] %%)
+*Status: "idle"
+*Status: "busy"
+*Status: "waiting"
+*Status: "printing"
+*Status: "warming up"
+*Status: "scanning"
+*Status: "PrinterError: paper out"
+*Status: "PrinterError: paper jam"
+*Status: "PrinterError: printer busy"
+*Status: "PrinterError: printer busy"
+*Status: "PrinterError: printer hard error"
+*Status: "PrinterError: printer fatal error"
+
+*% Input Sources (format: %%[ status: <stat>; source: <one of these> ]%% )
+
+*% ========== 5.22 Color Separation Keywords ================================================
+
+*% Produced using PPDTool 2.0's BLDPPD43.PS file
